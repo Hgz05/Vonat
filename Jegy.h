@@ -11,6 +11,7 @@ class Jegy
 
 public:
     Jegy(Jarat *FelJarat = nullptr, Allomas *Elso = nullptr, Allomas *Utolso = nullptr, int Ar = -1) : JJarat(FelJarat), ElsoAllomas(Elso), VegAllomas(Utolso), Jegyar(Ar) {};
+    Jegy(Jegy* CopyJegy);
     virtual ~Jegy() = default;
     Jarat* getJarat();
     Allomas* getElsoAllomas();

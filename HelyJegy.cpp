@@ -3,6 +3,8 @@
 #include <string>
 
 
+
+
 int HelyJegy::getUlesSzam() const {
     return UlesSzam;
 }

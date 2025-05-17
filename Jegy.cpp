@@ -1,6 +1,13 @@
 #include "Jegy.h"
 #include <iostream>
 
+Jegy::Jegy(Jegy *CopyJegy) {
+    JJarat = CopyJegy->getJarat();
+    ElsoAllomas = CopyJegy->getElsoAllomas();
+    VegAllomas = CopyJegy->getVegAllomas();
+    Jegyar = CopyJegy->getJegyAr();
+}
+
 Jarat * Jegy::getJarat() {
     return JJarat;
 }
