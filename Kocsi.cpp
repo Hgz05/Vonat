@@ -1,5 +1,6 @@
 #include "Kocsi.h"
 #include <iostream>
+#include <string>
 
 Kocsi::Kocsi(const int KocsiSzam, eKocsiTipus KocsiTipus) : KocsiSzam(KocsiSzam), KocsiTipus(KocsiTipus)
 {
@@ -18,6 +19,17 @@ Kocsi::Kocsi(const int KocsiSzam, eKocsiTipus KocsiTipus) : KocsiSzam(KocsiSzam)
         }
     }
 }
+
+Kocsi::Kocsi(Kocsi *KocsiCopy) {
+    nextNode = KocsiCopy->nextNode;
+    KocsiSzam = KocsiCopy->KocsiSzam;
+    KocsiTipus = KocsiCopy->KocsiTipus;
+    UlesArray = new Ules *[60];
+    for (int i = 0; i<60; i++) {
+        UlesArray[i] = new Ules(KocsiCopy->UlesArray[i]);
+    }
+}
+
 Kocsi::~Kocsi()
 {
     {
@@ -39,24 +51,23 @@ eKocsiTipus Kocsi::getKocsiTipus()
 }
 
 eKocsiTipus Kocsi::stringToKocsiTipus(const std::string KocsiTipus) {
-    switch (KocsiTipus) {
-        case "Elso":
-            return Elso;
-            break;
-            case "Masod":
-            return Masod;
-            break;
-            case "Alvo":
-            return Alvo;
-            break;
-            default:
-            throw "Invalid String Input To KocsiTipus!";
+    if (KocsiTipus == "Elso") {
+        return Elso;
+    } else if (KocsiTipus == "Masod") {
+        return Masod;
+    } else if (KocsiTipus == "Alvo") {
+        return Alvo;
     }
+    throw "Invalid String To Kocsitipus.";
 }
 
 Kocsi *Kocsi::getNextNode()
 {
     return nextNode;
+}
+
+void Kocsi::setNextNode(Kocsi *nextPtr) {
+    nextNode = nextPtr;
 }
 
 void Kocsi::operator+(Kocsi *newKocsi)

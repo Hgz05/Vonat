@@ -13,6 +13,7 @@ int main(int argc, char const *argv[])
 
     Allomas* FirstAllomas = Allomas::InitAllomas();
     std::cout << FirstAllomas->getAllomasNev();
+    Vonat** VonatArray = Vonat::InitVonat();
     return 0;
 }
 

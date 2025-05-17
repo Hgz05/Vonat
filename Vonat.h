@@ -20,8 +20,12 @@ class Vonat
     static int VonatArraySize;
 
 public:
+
     Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int KocsiDarab = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), KocsiDarab(KocsiDarab), Kor(Kor) {};
+    Vonat(Vonat* VonatCopy);
+    Kocsi* copyKocsiArray(Kocsi* NextNode);
     ~Vonat();
+    void DeleteKocsiArray(Kocsi* ArrayElement);
 
     eVonatTipus getVonatTipus() const;
     static eVonatTipus stringToVonatTipus(std::string VonatTipus);

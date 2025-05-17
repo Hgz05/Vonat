@@ -8,6 +8,7 @@ Ules::~Ules()
 {
 }
 
+
 int Ules::getUlesSzam() const
 {
     return UlesSzam;

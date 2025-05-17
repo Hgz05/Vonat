@@ -3,29 +3,57 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+
+int Vonat::VonatArraySize = 0;
+
+
+Vonat::Vonat(Vonat *VonatCopy) {
+    VonatTipus =VonatCopy->VonatTipus;
+    VonatSzam = VonatCopy->VonatSzam;
+    MaxSeb = VonatCopy->MaxSeb;
+    Kor = VonatCopy->Kor;
+    KocsiDarab = VonatCopy->KocsiDarab;
+    KocsiArray = copyKocsiArray(VonatCopy->KocsiArray);
+
+}
+
+Kocsi * Vonat::copyKocsiArray(Kocsi *NextNode) {
+    if (NextNode->getNextNode() != nullptr) {
+        NextNode->setNextNode(copyKocsiArray(NextNode->getNextNode()));
+    }
+    Kocsi* NewKocsi = new Kocsi(NextNode); //This may not work
+    return NewKocsi;
+}
+
+Vonat::~Vonat() {
+    DeleteKocsiArray(KocsiArray);
+}
+
+void Vonat::DeleteKocsiArray(Kocsi *ArrayElement) {
+    if (ArrayElement->getNextNode() != nullptr) {
+        DeleteKocsiArray(ArrayElement->getNextNode());
+    }
+    delete ArrayElement;
+}
+
 eVonatTipus Vonat::getVonatTipus() const
 {
     return VonatTipus;
 }
 
 eVonatTipus Vonat::stringToVonatTipus(std::string VonatTipus) {
-    switch (VonatTipus) {
-        case "InterCity":
-            return InterCity;
-            break;
-        case "Gyors":
-            return Gyors;
-            break;
-        case "Zonazo":
-            return Zonazo;
-            break;
-        case "Szemelyi":
-            return Szemelyi;
-            break;
-        default:
-            throw "Invalid String Input To VonatTipus!";
+    if (VonatTipus == "InterCity") {
+        return InterCity;
+    } else if (VonatTipus == "Gyors") {
+        return Gyors;
+    } else if (VonatTipus == "Zonazo") {
+        return Zonazo;
+    } else if (VonatTipus == "Szemelyi") {
+        return Szemelyi;
     }
-}
+    throw "Invalid String Input To VonatTipus!";
+    }
+
 
 std::string Vonat::enumToString(eVonatTipus type) const
 {
@@ -138,6 +166,9 @@ Vonat** Vonat::InitVonat() {
                         ElsoKocsi = new Kocsi(KocsiSzam, Kocsi::stringToKocsiTipus(KocsiTipus));
                         FirstKocsiExists = true;
                     } else if (FirstKocsiExists) {
+                        if (ElsoKocsi == nullptr) {
+                            throw "Elso Kocsi Is Null!";
+                        }
                         Kocsi* NextKocsi = new Kocsi(KocsiSzam, Kocsi::stringToKocsiTipus(KocsiTipus));
                         ElsoKocsi->operator+(NextKocsi);
                     }
@@ -147,13 +178,15 @@ Vonat** Vonat::InitVonat() {
 
         }
         if (!FirstVonatExists) {
-            VonatArray[0] = new Vonat(Vonat::stringToVonatTipus(VonatTipus),VonatSzam,ElsoKocsi, MaxSeb, KocsiDarab, Kor);
+            VonatArray[0] = new Vonat(stringToVonatTipus(VonatTipus),VonatSzam,ElsoKocsi, MaxSeb, KocsiDarab, Kor);
             FirstVonatExists = true;
             VonatArraySize = 1;
         }else if (FirstVonatExists) {
             Vonat* NextVonat = new Vonat(stringToVonatTipus(VonatTipus),VonatSzam, ElsoKocsi, MaxSeb, KocsiDarab, Kor);
             VonatArray = AddToVonatArray(VonatArray, NextVonat);
+            std::cout << VonatArray[1]->enumToString(VonatArray[1]->getVonatTipus());
         }
+
         //Vonat add to array and kocsi link to vonat
     }
     return VonatArray;
@@ -166,10 +199,9 @@ Vonat ** Vonat::AddToVonatArray(Vonat **VonatArray, Vonat *VonatToAdd) {
     VonatArraySize++;
     Vonat** NewVonatArray = new Vonat *[VonatArraySize];
     for (int i = 0; i < VonatArraySize-1; i++) {
-        NewVonatArray[i] = VonatArray[i];
-        delete VonatArray[i];
+        NewVonatArray[i] = new Vonat(VonatArray[i]);// The delete deletes the nextNode
     }
-    delete VonatArray;
+    delete[] VonatArray;
     NewVonatArray[VonatArraySize-1] = VonatToAdd;
     return NewVonatArray;
 }
@@ -188,7 +220,7 @@ Vonat ** Vonat::RemoveFromVonatArray(Vonat **VonatArray, Vonat *VonatToRemove) {
     }
     Vonat** NewVonatArray = new Vonat *[VonatArraySize];
     for (int i = 0; i < VonatArraySize-1; i++) {
-        NewVonatArray[i] = VonatArray[i];
+        NewVonatArray[i] = new Vonat(VonatArray[i]);
         delete VonatArray[i];
     }
     delete VonatArray;

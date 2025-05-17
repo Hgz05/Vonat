@@ -9,6 +9,11 @@ class Ules
 public:
     Ules();
     ~Ules();
+    Ules(Ules* UlesCopy) {
+        UlesSzam = UlesCopy->UlesSzam;
+        AblakMel = UlesCopy->AblakMel;
+        Szabad = UlesCopy->Szabad;
+    }
     int getUlesSzam() const;
     bool getAblakMel() const;
     bool getSzabad() const;
