@@ -40,6 +40,7 @@ public:
     static Vonat** InitVonat();
     static Vonat** AddToVonatArray(Vonat** VonatArray, Vonat* VonatToAdd);
     static Vonat** RemoveFromVonatArray(Vonat** VonatArray, Vonat* VonatToRemove);
+    static Vonat* FindVonatByNumber(Vonat** VonatArray, int VonatNumber);
 };
 
 #endif

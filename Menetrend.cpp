@@ -1,7 +1,8 @@
 #include "Menetrend.h"
 #include <iostream>
 
-Menetrend::Menetrend(const Allomas *MAlomas, Ido *ErkIdo, Ido *IndIdo) {
+Menetrend::Menetrend(const Allomas *MAlomas, int ID, Ido *ErkIdo, Ido *IndIdo) {
+    MenetrendID = ID;
     CurrAllomas = MAlomas;
     ErkezoIdo = ErkIdo;
     InduloIdo = IndIdo;

@@ -22,6 +22,7 @@ public:
     Allomas *getNextNode() const;
     void operator+(Allomas *newAllomas);
     static Allomas* InitAllomas();
+    Allomas* FindAllomasByName(const std::string& Nev);
 };
 
 #endif

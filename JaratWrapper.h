@@ -8,10 +8,12 @@ class JaratWrapper {
     JaratWrapper* nextNode;
 
     public:
-    JaratWrapper(Jarat* JaratPtr = nullptr, JaratWrapper* nextJarat = nullptr) : currJarat(JaratPtr), nextNode(nextJarat){};
+    JaratWrapper(Jarat* JaratPtr = nullptr) : currJarat(JaratPtr){};
     ~JaratWrapper();
     Jarat* getJarat();
     JaratWrapper* getNextNode();
+    static JaratWrapper* JaratWrapperInit(Allomas* FirstAllomas, Vonat** VonatArray);
+    void operator+(JaratWrapper* newJaratWrapper);
 };
 
 

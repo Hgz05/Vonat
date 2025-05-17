@@ -6,9 +6,9 @@ struct Ido {
 
 public:
     Ido(int ora = 0, int perc = 0) : ora(ora), perc(perc) {}
-    explicit Ido(Ido* CIdo) {
-        ora = CIdo->ora;
-        perc = CIdo->perc;
+    explicit Ido(Ido* CopyIdo) {
+        ora = CopyIdo->ora;
+        perc = CopyIdo->perc;
     }
     Ido operator-(Ido const &Alapido) const;
     bool operator==(Ido const &Alapido) const;

@@ -6,13 +6,14 @@ class Menetrend
 {
     Menetrend *nextNode = nullptr;
     const Allomas *CurrAllomas;
+    int MenetrendID;
     Ido *ErkezoIdo;
     Ido *InduloIdo;
     Ido *EredErkezoIdo;
     Ido *EredInduloIdo;
 
 public:
-    Menetrend(const Allomas *MAllomas = nullptr, Ido *ErkIdo = nullptr, Ido *IndIdo = nullptr);
+    Menetrend(const Allomas *MAllomas = nullptr, int ID = -1 ,Ido *ErkIdo = nullptr, Ido *IndIdo = nullptr);
     Ido getErkezoIdo() const;
     Ido getInduloIdo() const;
     void printKeses();

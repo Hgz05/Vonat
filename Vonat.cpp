@@ -130,7 +130,7 @@ Vonat** Vonat::InitVonat() {
 
     std::ifstream file("Vonat.dat");
     if (!file.is_open()) {
-        throw "Allomas file could not be opened!";
+        throw "Vonat file could not be opened!";
     }
     std::string line;
     std::string tmp;
@@ -229,4 +229,13 @@ Vonat ** Vonat::RemoveFromVonatArray(Vonat **VonatArray, Vonat *VonatToRemove) {
     delete[] VonatArray;
     return NewVonatArray;
 
+}
+
+Vonat * Vonat::FindVonatByNumber(Vonat **VonatArray, int VonatNumber) {
+    for (int i = 0; i < VonatArraySize; i++) {
+         if (VonatArray[i]->getVonatSzam() == VonatNumber) {
+             return VonatArray[i];
+         }
+    }
+    throw "Vonat with this number does not exist!";
 }

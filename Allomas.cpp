@@ -92,3 +92,14 @@ Allomas* Allomas::InitAllomas() {
     return FirstAllomas;
 
 }
+
+Allomas * Allomas::FindAllomasByName(const std::string &Nev) {
+    Allomas* tmp = this;
+    while (tmp->getNextNode() != nullptr) {
+        if (tmp->getAllomasNev() == Nev) {
+            return tmp;
+        }
+        tmp = tmp->getNextNode();
+    }
+    throw "Allomas with that Name does not exist!";
+}
