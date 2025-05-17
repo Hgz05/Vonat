@@ -25,6 +25,26 @@ bool Allomas::getWc() const
 bool Allomas::getBufe() const
 {
     return Bufe;
+}
+
+void Allomas::set_nev(const std::string nev) {
+    Nev = nev;
+}
+
+void Allomas::set_szelesseg(const double szelesseg) {
+    Szelesseg = szelesseg;
+}
+
+void Allomas::set_magassag(const double magassag) {
+    Magassag = magassag;
+}
+
+void Allomas::set_wc(const bool wc) {
+    Wc = wc;
+}
+
+void Allomas::set_bufe(const bool bufe) {
+    Bufe = bufe;
 };
 Allomas *Allomas::getNextNode() const
 {
