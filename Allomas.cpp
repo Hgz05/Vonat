@@ -1,6 +1,10 @@
 #include "Allomas.h"
+
+#include <array>
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <sstream>
 
 std::string Allomas::getAllomasNev() const
 {
@@ -26,26 +30,6 @@ bool Allomas::getBufe() const
 {
     return Bufe;
 }
-
-void Allomas::set_nev(const std::string nev) {
-    Nev = nev;
-}
-
-void Allomas::set_szelesseg(const double szelesseg) {
-    Szelesseg = szelesseg;
-}
-
-void Allomas::set_magassag(const double magassag) {
-    Magassag = magassag;
-}
-
-void Allomas::set_wc(const bool wc) {
-    Wc = wc;
-}
-
-void Allomas::set_bufe(const bool bufe) {
-    Bufe = bufe;
-};
 Allomas *Allomas::getNextNode() const
 {
     return nextNode;
@@ -61,4 +45,53 @@ void Allomas::operator+(Allomas *newAllomas)
         tmp = tmp->getNextNode();
     }
     tmp->nextNode = newAllomas;
+}
+Allomas* Allomas::AllomasRead() {
+    int ReadIncrement = 0;
+    std::string Name;
+    double Szelesseg;
+    double Magassag;
+    bool Wc;
+    bool Bufe;
+    bool FirstAllomasExists = false;
+    Allomas* FirstAllomas = nullptr; //Temporary Allomas object
+    std::ifstream file("Allomas.dat");
+    if (!file.is_open()) {
+        throw "File could not be opened!";
+    }
+    std::string line;
+    std::string tmp;
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        while (std::getline(ss, tmp, ';')) {
+            if (ReadIncrement == 0) {
+                Name = tmp;
+                ReadIncrement++;
+            }else if (ReadIncrement == 1) {
+                Szelesseg = std::stod(tmp);
+                ReadIncrement++;
+            }else if (ReadIncrement == 2) {
+                Magassag = std::stod(tmp);
+                ReadIncrement++;
+            }else if (ReadIncrement == 3) {
+                Wc = std::stoi(tmp) == 1;
+                ReadIncrement++;
+            }else if (ReadIncrement == 4) {
+                Bufe = std::stoi(tmp) == 1;
+                ReadIncrement = 0;
+            }
+        }
+        if (!FirstAllomasExists) {
+            FirstAllomas = new Allomas(Name,Szelesseg,Magassag,Wc,Bufe);
+            FirstAllomasExists = true;
+        } else {
+            Allomas* NextAllomas = new Allomas(Name,Szelesseg,Magassag,Wc,Bufe);
+            FirstAllomas->operator+(NextAllomas);
+        }
+    }
+    if (FirstAllomas == nullptr) {
+        throw "FirstAllomas was not initialised!";
+    }
+    return FirstAllomas;
+
 }

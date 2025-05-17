@@ -23,13 +23,9 @@ public:
     double getY() const;
     bool getWc() const;
     bool getBufe() const;
-    void set_nev(const std::string nev);
-    void set_szelesseg(const double szelesseg);
-    void set_magassag(const double magassag);
-    void set_wc(const bool wc);
-    void set_bufe(const bool bufe);
     Allomas *getNextNode() const;
     void operator+(Allomas *newAllomas);
+    static Allomas* AllomasRead();
 
 };
 
