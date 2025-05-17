@@ -5,8 +5,7 @@
 #include "Allomas.h"
 #include "HelyJegy.h"
 #include <iostream>
-
-
+#include "JegyList.h"
 
 
 int main(int argc, char const *argv[]) {
@@ -14,6 +13,7 @@ int main(int argc, char const *argv[]) {
     std::cout << FirstAllomas->getAllomasNev();
     Vonat** VonatArray = Vonat::InitVonat();
     JaratWrapper* FirstJarat = JaratWrapper::JaratWrapperInit(FirstAllomas, VonatArray);
+    JegyList* JegyList = JegyList::InitJegyList(FirstJarat,FirstAllomas);
     return 0;
 }
 

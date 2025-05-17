@@ -111,4 +111,13 @@ void JaratWrapper::operator+(JaratWrapper *newJaratWrapper) {
         }
         tmp->nextNode = newJaratWrapper;
 }
-
+Jarat * JaratWrapper::FindJaratByName(const std::string &Nev) {
+    JaratWrapper* tmp = this;
+    while (tmp != nullptr) {
+        if (tmp->getJarat()->getJaratName() == Nev) {
+            return tmp->getJarat();
+        }
+        tmp = tmp->getNextNode();
+    }
+    throw "Jarat with that Name does not exist!";
+}
