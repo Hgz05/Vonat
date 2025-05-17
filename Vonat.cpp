@@ -184,7 +184,6 @@ Vonat** Vonat::InitVonat() {
         }else if (FirstVonatExists) {
             Vonat* NextVonat = new Vonat(stringToVonatTipus(VonatTipus),VonatSzam, ElsoKocsi, MaxSeb, KocsiDarab, Kor);
             VonatArray = AddToVonatArray(VonatArray, NextVonat);
-            std::cout << VonatArray[1]->enumToString(VonatArray[1]->getVonatTipus());
         }
 
         //Vonat add to array and kocsi link to vonat

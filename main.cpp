@@ -9,12 +9,11 @@
 
 
 
-int main(int argc, char const *argv[])
-{
-
+int main(int argc, char const *argv[]) {
     Allomas* FirstAllomas = Allomas::InitAllomas();
     std::cout << FirstAllomas->getAllomasNev();
     Vonat** VonatArray = Vonat::InitVonat();
+    JaratWrapper* FirstJarat = JaratWrapper::JaratWrapperInit(FirstAllomas, VonatArray);
     return 0;
 }
 

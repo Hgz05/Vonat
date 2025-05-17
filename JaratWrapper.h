@@ -5,7 +5,7 @@
 
 class JaratWrapper {
     Jarat* currJarat;
-    JaratWrapper* nextNode;
+    JaratWrapper* nextNode = nullptr;
 
     public:
     JaratWrapper(Jarat* JaratPtr = nullptr) : currJarat(JaratPtr){};

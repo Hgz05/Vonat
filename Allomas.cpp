@@ -95,7 +95,7 @@ Allomas* Allomas::InitAllomas() {
 
 Allomas * Allomas::FindAllomasByName(const std::string &Nev) {
     Allomas* tmp = this;
-    while (tmp->getNextNode() != nullptr) {
+    while (tmp != nullptr) {
         if (tmp->getAllomasNev() == Nev) {
             return tmp;
         }

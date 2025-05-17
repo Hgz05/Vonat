@@ -52,7 +52,7 @@ JaratWrapper * JaratWrapper::JaratWrapperInit(Allomas* FirstAllomas, Vonat** Von
                 VonatSzam = std::stoi(tmp);
                 ReadIncrement++;
             } else if (ReadIncrement == 2) {
-                if (MenetrendID == 0) {
+                if (MenetrendReadIncrement == 0) {
                     MenetrendID = std::stoi(tmp);
                     MenetrendReadIncrement++;
                 }else if (MenetrendReadIncrement == 1) {
@@ -79,20 +79,23 @@ JaratWrapper * JaratWrapper::JaratWrapperInit(Allomas* FirstAllomas, Vonat** Von
                         Ido *IndulIdo = new Ido(IndulOra,IndulPerc);
                         Menetrend* NextMenetrend = new Menetrend(FirstAllomas->FindAllomasByName(AllomasNev),MenetrendID,ErkezIdo, IndulIdo);
                         ELsoMenetrend->operator+(NextMenetrend);
+
                     }
                     MenetrendReadIncrement = 0;
                 }
             }
         }
         if (!ElsoJaratWrapperExists) {
-            Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam));
+            Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam),ELsoMenetrend);
             ElsoJaratWrapper = new JaratWrapper(JaratToAdd);
             ElsoJaratWrapperExists = true;
         } else if (ElsoJaratWrapperExists) {
-            Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam));
+            Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam), ELsoMenetrend);
             JaratWrapper* NextJaratWrapper = new JaratWrapper(JaratToAdd);
             ElsoJaratWrapper->operator+(NextJaratWrapper);
+
         }
+        ElsoMenetrendExist = false;
     }
 
     return ElsoJaratWrapper;
