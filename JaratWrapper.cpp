@@ -49,22 +49,25 @@ JaratWrapper * JaratWrapper::JaratWrapperInit(Allomas* FirstAllomas, Vonat** Von
                 JaratNev = tmp;
                 ReadIncrement++;
             } else if (ReadIncrement == 1) {
-                MenetrendID = std::stoi(tmp);
+                VonatSzam = std::stoi(tmp);
                 ReadIncrement++;
             } else if (ReadIncrement == 2) {
                 if (MenetrendID == 0) {
+                    MenetrendID = std::stoi(tmp);
+                    MenetrendReadIncrement++;
+                }else if (MenetrendReadIncrement == 1) {
                     AllomasNev = tmp;
                     MenetrendReadIncrement++;
-                } else if (MenetrendReadIncrement == 1) {
+                } else if (MenetrendReadIncrement == 2) {
                     ErkezOra = std::stoi(tmp);
                     MenetrendReadIncrement++;
-                } else if (MenetrendReadIncrement == 2) {
+                } else if (MenetrendReadIncrement == 3) {
                     ErkezPerc = std::stoi(tmp);
                     MenetrendReadIncrement++;
-                } else if (MenetrendReadIncrement == 3) {
+                } else if (MenetrendReadIncrement == 4) {
                     IndulOra = std::stoi(tmp);
                     MenetrendReadIncrement++;
-                } else if (MenetrendReadIncrement == 4) {
+                } else if (MenetrendReadIncrement == 5) {
                     IndulPerc = std::stoi(tmp);
                     if (!ElsoMenetrendExist) {
                         Ido *ErkezIdo = new Ido(ErkezOra,ErkezPerc);
@@ -81,17 +84,17 @@ JaratWrapper * JaratWrapper::JaratWrapperInit(Allomas* FirstAllomas, Vonat** Von
                 }
             }
         }
+        if (!ElsoJaratWrapperExists) {
+            Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam));
+            ElsoJaratWrapper = new JaratWrapper(JaratToAdd);
+            ElsoJaratWrapperExists = true;
+        } else if (ElsoJaratWrapperExists) {
+            Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam));
+            JaratWrapper* NextJaratWrapper = new JaratWrapper(JaratToAdd);
+            ElsoJaratWrapper->operator+(NextJaratWrapper);
+        }
+    }
 
-    }
-    if (!ElsoJaratWrapperExists) {
-        Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam));
-        ElsoJaratWrapper = new JaratWrapper(JaratToAdd);
-        ElsoJaratWrapperExists = true;
-    } else if (ElsoJaratWrapperExists) {
-        Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam));
-        JaratWrapper* NextJaratWrapper = new JaratWrapper(JaratToAdd);
-        ElsoJaratWrapper->operator+(NextJaratWrapper);
-    }
     return ElsoJaratWrapper;
 }
 
