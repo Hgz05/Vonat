@@ -38,6 +38,22 @@ eKocsiTipus Kocsi::getKocsiTipus()
     return KocsiTipus;
 }
 
+eKocsiTipus Kocsi::stringToKocsiTipus(const std::string KocsiTipus) {
+    switch (KocsiTipus) {
+        case "Elso":
+            return Elso;
+            break;
+            case "Masod":
+            return Masod;
+            break;
+            case "Alvo":
+            return Alvo;
+            break;
+            default:
+            throw "Invalid String Input To KocsiTipus!";
+    }
+}
+
 Kocsi *Kocsi::getNextNode()
 {
     return nextNode;

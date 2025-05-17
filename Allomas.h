@@ -3,10 +3,6 @@
 #include <string>
 class Allomas
 {
-public:
-
-
-private:
     Allomas *nextNode = nullptr;
     std::string Nev;
     double Szelesseg;
@@ -25,8 +21,7 @@ public:
     bool getBufe() const;
     Allomas *getNextNode() const;
     void operator+(Allomas *newAllomas);
-    static Allomas* AllomasRead();
-
+    static Allomas* InitAllomas();
 };
 
 #endif

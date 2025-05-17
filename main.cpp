@@ -11,7 +11,7 @@
 int main(int argc, char const *argv[])
 {
 
-    Allomas* FirstAllomas = Allomas::AllomasRead();
+    Allomas* FirstAllomas = Allomas::InitAllomas();
     std::cout << FirstAllomas->getAllomasNev();
     return 0;
 }

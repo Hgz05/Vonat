@@ -1,7 +1,4 @@
 #include "Allomas.h"
-
-#include <array>
-#include <iostream>
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -46,7 +43,7 @@ void Allomas::operator+(Allomas *newAllomas)
     }
     tmp->nextNode = newAllomas;
 }
-Allomas* Allomas::AllomasRead() {
+Allomas* Allomas::InitAllomas() {
     int ReadIncrement = 0;
     std::string Name;
     double Szelesseg;
@@ -57,7 +54,7 @@ Allomas* Allomas::AllomasRead() {
     Allomas* FirstAllomas = nullptr; //Temporary Allomas object
     std::ifstream file("Allomas.dat");
     if (!file.is_open()) {
-        throw "File could not be opened!";
+        throw "Allomas file could not be opened!";
     }
     std::string line;
     std::string tmp;

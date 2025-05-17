@@ -1,5 +1,7 @@
 #ifndef KOCSI_H
 #define KOCSI_H
+#include <string>
+
 #include "Ules.h"
 enum eKocsiTipus
 {
@@ -20,6 +22,7 @@ public:
     ~Kocsi();
     int getKocsiSzam();
     eKocsiTipus getKocsiTipus();
+    static eKocsiTipus stringToKocsiTipus(const std::string KocsiTipus);
     Kocsi *getNextNode();
     void operator+(Kocsi *newKocsi);
 };

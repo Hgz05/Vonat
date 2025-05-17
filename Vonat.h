@@ -15,20 +15,21 @@ class Vonat
     int VonatSzam;
     Kocsi *KocsiArray; // Linked list
     int MaxSeb;
-    int MaxKocsi;
     int Kor;
+    int KocsiDarab;
 
 public:
-    Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int MaxKocsi = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), MaxKocsi(MaxKocsi), Kor(Kor) {};
+    Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int KocsiDarab = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), KocsiDarab(KocsiDarab), Kor(Kor) {};
     ~Vonat();
     eVonatTipus getVonatTipus() const;
     std::string enumToString(eVonatTipus type) const;
     int getVonatSzam() const;
     Kocsi *getKocsi();
     int getMaxSeb() const;
-    int getMaxKocsi() const;
+    int getKocsiDarab() const;
     int getKor() const;
     void printVonatStat() const;
+    static Vonat** InitVonat();
 };
 
 #endif
