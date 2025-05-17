@@ -218,12 +218,15 @@ Vonat ** Vonat::RemoveFromVonatArray(Vonat **VonatArray, Vonat *VonatToRemove) {
         delete VonatArray;
         return nullptr;
     }
+    int j = 0;
     Vonat** NewVonatArray = new Vonat *[VonatArraySize];
     for (int i = 0; i < VonatArraySize-1; i++) {
-        NewVonatArray[i] = new Vonat(VonatArray[i]);
-        delete VonatArray[i];
+        if (VonatArray[i] != VonatToRemove) {
+            NewVonatArray[j] = new Vonat(VonatArray[i]);
+            j++;
+        }
     }
-    delete VonatArray;
+    delete[] VonatArray;
     return NewVonatArray;
 
 }

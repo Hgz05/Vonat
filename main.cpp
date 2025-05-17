@@ -1,5 +1,6 @@
 
 #include "Jarat.h"
+#include "JaratWrapper.h"
 #include "Jegy.h"
 #include "Allomas.h"
 #include "HelyJegy.h"

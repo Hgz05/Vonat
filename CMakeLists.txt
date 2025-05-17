@@ -12,4 +12,6 @@ add_executable(NHFClion main.cpp
         Kocsi.cpp
         Jegy.cpp
         HelyJegy.cpp
-        Allomas.cpp)
+        Allomas.cpp
+        JaratWrapper.cpp
+        JaratWrapper.h)
