@@ -8,6 +8,25 @@ eVonatTipus Vonat::getVonatTipus() const
     return VonatTipus;
 }
 
+eVonatTipus Vonat::stringToVonatTipus(std::string VonatTipus) {
+    switch (VonatTipus) {
+        case "InterCity":
+            return InterCity;
+            break;
+        case "Gyors":
+            return Gyors;
+            break;
+        case "Zonazo":
+            return Zonazo;
+            break;
+        case "Szemelyi":
+            return Szemelyi;
+            break;
+        default:
+            throw "Invalid String Input To VonatTipus!";
+    }
+}
+
 std::string Vonat::enumToString(eVonatTipus type) const
 {
     switch (type)
@@ -66,9 +85,10 @@ void Vonat::printVonatStat() const
 }
 
 Vonat** Vonat::InitVonat() {
-    int ReadIncrement = 0;
-    int KocsiReadIncrement = 0;
-    bool FirstKocsiExists = false;
+
+    bool FirstVonatExists = false;
+    Vonat** VonatArray = new Vonat *[1];
+    VonatArray[0] = nullptr;
 
     std::string VonatTipus;
     int VonatSzam;
@@ -87,7 +107,10 @@ Vonat** Vonat::InitVonat() {
     std::string line;
     std::string tmp;
     while (std::getline(file, line)) {
-        Kocsi* ElsoKocsi;
+        int ReadIncrement = 0;
+        int KocsiReadIncrement = 0;
+        bool FirstKocsiExists = false;
+        Kocsi* ElsoKocsi =nullptr;
         std::stringstream ss(line);
         while (std::getline(ss, tmp, ';')) {
             if (ReadIncrement == 0) {
@@ -118,12 +141,57 @@ Vonat** Vonat::InitVonat() {
                         Kocsi* NextKocsi = new Kocsi(KocsiSzam, Kocsi::stringToKocsiTipus(KocsiTipus));
                         ElsoKocsi->operator+(NextKocsi);
                     }
-
                     KocsiReadIncrement = 0;
                 }
             }
 
         }
-        
+        if (!FirstVonatExists) {
+            VonatArray[0] = new Vonat(Vonat::stringToVonatTipus(VonatTipus),VonatSzam,ElsoKocsi, MaxSeb, KocsiDarab, Kor);
+            FirstVonatExists = true;
+            VonatArraySize = 1;
+        }else if (FirstVonatExists) {
+            Vonat* NextVonat = new Vonat(stringToVonatTipus(VonatTipus),VonatSzam, ElsoKocsi, MaxSeb, KocsiDarab, Kor);
+            VonatArray = AddToVonatArray(VonatArray, NextVonat);
+        }
+        //Vonat add to array and kocsi link to vonat
     }
+    return VonatArray;
+}
+
+Vonat ** Vonat::AddToVonatArray(Vonat **VonatArray, Vonat *VonatToAdd) {
+    if (VonatArray == nullptr || VonatToAdd == nullptr) {
+        throw "VonatArray or VonatToAdd does not exist!";
+    }
+    VonatArraySize++;
+    Vonat** NewVonatArray = new Vonat *[VonatArraySize];
+    for (int i = 0; i < VonatArraySize-1; i++) {
+        NewVonatArray[i] = VonatArray[i];
+        delete VonatArray[i];
+    }
+    delete VonatArray;
+    NewVonatArray[VonatArraySize-1] = VonatToAdd;
+    return NewVonatArray;
+}
+
+Vonat ** Vonat::RemoveFromVonatArray(Vonat **VonatArray, Vonat *VonatToRemove) {
+    if (VonatArray == nullptr || VonatToRemove == nullptr) {
+        throw "VonatArray or VonatToRemove does not exist!";
+    }
+    VonatArraySize--;
+    if (VonatArraySize == 0) {
+        for (int i = 0; i < VonatArraySize+1; i++) {
+            delete VonatArray[i];
+        }
+        delete VonatArray;
+        return nullptr;
+    }
+    Vonat** NewVonatArray = new Vonat *[VonatArraySize];
+    for (int i = 0; i < VonatArraySize-1; i++) {
+        NewVonatArray[i] = VonatArray[i];
+        delete VonatArray[i];
+    }
+    delete VonatArray;
+    return NewVonatArray;
+
 }

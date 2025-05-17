@@ -17,12 +17,16 @@ class Vonat
     int MaxSeb;
     int Kor;
     int KocsiDarab;
+    static int VonatArraySize;
 
 public:
     Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int KocsiDarab = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), KocsiDarab(KocsiDarab), Kor(Kor) {};
     ~Vonat();
+
     eVonatTipus getVonatTipus() const;
+    static eVonatTipus stringToVonatTipus(std::string VonatTipus);
     std::string enumToString(eVonatTipus type) const;
+
     int getVonatSzam() const;
     Kocsi *getKocsi();
     int getMaxSeb() const;
@@ -30,6 +34,8 @@ public:
     int getKor() const;
     void printVonatStat() const;
     static Vonat** InitVonat();
+    static Vonat** AddToVonatArray(Vonat** VonatArray, Vonat* VonatToAdd);
+    static Vonat** RemoveFromVonatArray(Vonat** VonatArray, Vonat* VonatToRemove);
 };
 
 #endif
