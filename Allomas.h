@@ -80,7 +80,7 @@ public:
     /**
      * Delete all Allomas.
      */
-    void DelAllomas();
+    void DelAllomas() ;
 
     /**
      * Next node setter.

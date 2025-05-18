@@ -4,6 +4,9 @@
 #include <iostream>
 #include <sstream>
 
+
+JaratWrapper::~JaratWrapper() {}
+
 void JaratWrapper::DelJaratWrapper() {
     if (this->nextNode != nullptr) {
         this->nextNode->DelJaratWrapper();
@@ -101,7 +104,7 @@ JaratWrapper * JaratWrapper::InitJaratWrapper(Allomas* FirstAllomas, Vonat** Von
             Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam),ELsoMenetrend);
             ElsoJaratWrapper = new JaratWrapper(JaratToAdd);
             ElsoJaratWrapperExists = true;
-        } else if (ElsoJaratWrapper != nullptr) {
+        } else {
             Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam), ELsoMenetrend);
             JaratWrapper* NextJaratWrapper = new JaratWrapper(JaratToAdd);
             ElsoJaratWrapper->operator+(NextJaratWrapper);
