@@ -7,8 +7,8 @@ class Ules
     bool Szabad = true;
 
 public:
-    Ules();
-    ~Ules();
+    Ules() = default;
+    ~Ules() = default;
     Ules(Ules* UlesCopy) {
         UlesSzam = UlesCopy->UlesSzam;
         AblakMel = UlesCopy->AblakMel;

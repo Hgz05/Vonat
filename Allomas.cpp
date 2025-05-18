@@ -4,6 +4,12 @@
 #include <sstream>
 
 Allomas::~Allomas() {}
+void Allomas::DelAllomas() {
+    if (this->nextNode != nullptr) {
+        this->nextNode->DelAllomas();
+    }
+    delete this;
+}
 
 std::string Allomas::getAllomasNev() const
 {

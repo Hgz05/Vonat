@@ -1,5 +1,6 @@
 #include "Interface.h"
 #include <iostream>
+
 int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWrapper *FirstJarat, JegyList *JegyList) {
     int UserInput;
 

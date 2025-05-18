@@ -1,6 +1,7 @@
 #include "Menetrend.h"
 #include <iostream>
 
+
 Menetrend::Menetrend( Allomas *MAlomas, int ID, Ido *ErkIdo, Ido *IndIdo) {
     MenetrendID = ID;
     CurrAllomas = MAlomas;

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 
+
 Kocsi::Kocsi(const int KocsiSzam, eKocsiTipus KocsiTipus) : KocsiSzam(KocsiSzam), KocsiTipus(KocsiTipus)
 {
     UlesArray = new Ules *[60];

@@ -1,7 +1,7 @@
 #include "Jarat.h"
-
 #include <iostream>
 #include <bits/ostream.tcc>
+
 
 Jarat::~Jarat()
 {

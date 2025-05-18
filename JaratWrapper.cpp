@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 
+
 JaratWrapper::~JaratWrapper() {}
 
 void JaratWrapper::DelJaratWrapper() {

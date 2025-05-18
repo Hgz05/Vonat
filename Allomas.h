@@ -20,6 +20,7 @@ public:
     bool getWc() const;
     bool getBufe() const;
     Allomas *getNextNode();
+    void DelAllomas();
 
     void setNextNode(Allomas *nextNode);
     void operator+(Allomas *newAllomas);

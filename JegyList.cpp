@@ -1,12 +1,11 @@
 #include "JegyList.h"
-
 #include <cmath>
 #include <string>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-
 #include "HelyJegy.h"
+
 
 JegyList::JegyList(Jegy *FirstJegy) {
     if (FirstJegy == nullptr) {
@@ -239,8 +238,10 @@ void JegyList::SaveJegyList(JegyList* JegyList) {
     for (int i = 0; i< JegyList->JegyArraySize; i++) {
         if (JegyList->JegyArraySize-i == 1) {
             file << JegyList->JegyArray[i]->FileToWrite();
+        } else {
+            file << JegyList->JegyArray[i]->FileToWrite()+"\n";
         }
-        file << JegyList->JegyArray[i]->FileToWrite()+"\n";
+
     }
     file.close();
 }

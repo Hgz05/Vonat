@@ -1,13 +1,5 @@
 #include "Ules.h"
 
-Ules::Ules()
-{
-}
-
-Ules::~Ules()
-{
-}
-
 
 int Ules::getUlesSzam() const
 {
