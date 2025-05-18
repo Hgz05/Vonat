@@ -38,6 +38,7 @@ public:
     int getKor() const;
     void printVonatStat() const;
     static Vonat** InitVonat();
+    static void SaveVonat(Vonat** VonatArray);
     static Vonat** AddToVonatArray(Vonat** VonatArray, Vonat* VonatToAdd);
     static Vonat** RemoveFromVonatArray(Vonat** VonatArray, Vonat* VonatToRemove);
     static Vonat* FindVonatByNumber(Vonat** VonatArray, int VonatNumber);

@@ -12,7 +12,8 @@ class JaratWrapper {
     ~JaratWrapper();
     Jarat* getJarat();
     JaratWrapper* getNextNode();
-    static JaratWrapper* JaratWrapperInit(Allomas* FirstAllomas, Vonat** VonatArray);
+    static JaratWrapper* InitJaratWrapper(Allomas* FirstAllomas, Vonat** VonatArray);
+    static void SaveJaratWrapper(JaratWrapper* FistJarat);
     void operator+(JaratWrapper* newJaratWrapper);
     Jarat* FindJaratByName(const std::string &Nev);
 };

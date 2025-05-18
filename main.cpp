@@ -5,17 +5,21 @@
 #include "Allomas.h"
 #include "HelyJegy.h"
 #include "JegyList.h"
-#include <iostream>
+#include "Interface.h"
+
 
 
 
 int main(int argc, char const *argv[]) {
     Allomas* FirstAllomas = Allomas::InitAllomas();
-    std::cout << FirstAllomas->getAllomasNev();
     Vonat** VonatArray = Vonat::InitVonat();
-    JaratWrapper* FirstJarat = JaratWrapper::JaratWrapperInit(FirstAllomas, VonatArray);
+    JaratWrapper* FirstJarat = JaratWrapper::InitJaratWrapper(FirstAllomas, VonatArray);
     JegyList* JegyList = JegyList::InitJegyList(FirstJarat,FirstAllomas);
+    if ( Interface::InterfaceInit(FirstAllomas,VonatArray,FirstJarat,JegyList) == 0) {
+        return 0;
+    }
     return 0;
+
 }
 
 // Default Test

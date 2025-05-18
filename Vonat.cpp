@@ -191,6 +191,9 @@ Vonat** Vonat::InitVonat() {
     return VonatArray;
 }
 
+void Vonat::SaveVonat(Vonat **VonatArray) {
+}
+
 Vonat ** Vonat::AddToVonatArray(Vonat **VonatArray, Vonat *VonatToAdd) {
     if (VonatArray == nullptr || VonatToAdd == nullptr) {
         throw "VonatArray or VonatToAdd does not exist!";

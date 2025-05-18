@@ -24,6 +24,7 @@ public:
     void operator+(Allomas *newAllomas);
     Allomas* AllomasDelete (Allomas *AllomasToDelete, Allomas* ElsoAllomas);
     static Allomas* InitAllomas();
+    static void SaveAllomas(Allomas* FirstAllomas);
     Allomas* FindAllomasByName(const std::string& Nev);
 };
 

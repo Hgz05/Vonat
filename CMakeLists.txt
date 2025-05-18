@@ -15,4 +15,6 @@ add_executable(NHFClion main.cpp
         Allomas.cpp
         JaratWrapper.cpp
         JegyList.cpp
-        )
+        Interface.cpp
+        Interface.h
+)

@@ -18,7 +18,7 @@ JaratWrapper * JaratWrapper::getNextNode() {
     return nextNode;
 }
 
-JaratWrapper * JaratWrapper::JaratWrapperInit(Allomas* FirstAllomas, Vonat** VonatArray) {
+JaratWrapper * JaratWrapper::InitJaratWrapper(Allomas* FirstAllomas, Vonat** VonatArray) {
     JaratWrapper* ElsoJaratWrapper = nullptr;
     bool ElsoJaratWrapperExists = false;
     std::string JaratNev;
@@ -99,6 +99,9 @@ JaratWrapper * JaratWrapper::JaratWrapperInit(Allomas* FirstAllomas, Vonat** Von
     }
 
     return ElsoJaratWrapper;
+}
+
+void JaratWrapper::SaveJaratWrapper(JaratWrapper* FistJarat) {
 }
 
 void JaratWrapper::operator+(JaratWrapper *newJaratWrapper) {

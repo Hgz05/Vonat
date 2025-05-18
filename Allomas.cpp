@@ -123,6 +123,9 @@ Allomas* Allomas::InitAllomas() {
 
 }
 
+void Allomas::SaveAllomas(Allomas *FirstAllomas) {
+}
+
 Allomas * Allomas::FindAllomasByName(const std::string &Nev) {
     Allomas* tmp = this;
     while (tmp != nullptr) {

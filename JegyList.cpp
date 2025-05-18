@@ -43,7 +43,7 @@ void JegyList::AddToJEgyArray(Jegy *JegyToAdd) {
     Jegy** NewJegyArray = new Jegy*[JegyArraySize+1];
     for (int i = 0; i < JegyArraySize; i++) {
         if (typeid(JegyArray[i]) == typeid(HelyJegy)) {
-            //NewJegyArray[i] = new HelyJegy(JegyArray[i]);
+            NewJegyArray[i] = new Jegy(JegyArray[i]); //HelyJegy copy
         } else {
             NewJegyArray[i] = new Jegy(JegyArray[i]);
         }
@@ -63,7 +63,7 @@ void JegyList::DeleteFromJEgyArray(Jegy *JegyToRemove) {
     for (int i = 0; i < JegyArraySize; i++) {
         if (JegyArray[i] != JegyToRemove) {
             if (typeid(JegyArray[i]) == typeid(HelyJegy))
-            //NewJegyArray[j] = new HelyJegy(JegyArray[i]);
+            NewJegyArray[j] = new Jegy(JegyArray[i]); //Helyjegy Copy
             j++;
         } else {
             NewJegyArray[j] = new Jegy(JegyArray[i]);
@@ -137,4 +137,7 @@ JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas
 
     }
     return JegyArray;
+}
+
+void JegyList::SaveJegyList(JegyList* JegyList) {
 }
