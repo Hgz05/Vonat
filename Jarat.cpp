@@ -1,7 +1,10 @@
 #include "Jarat.h"
 #include <iostream>
 #include <bits/ostream.tcc>
+#include <utility>
 
+
+Jarat::Jarat(std::string Nev, Vonat *JVonat, Menetrend *ElsoAllomas): JNev(std::move(Nev)), JVonat(JVonat), MenetRendArray(ElsoAllomas) {}
 
 Jarat::~Jarat()
 {

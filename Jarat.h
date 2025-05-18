@@ -28,7 +28,7 @@ public:
      * @param JVonat Vonat pointer.
      * @param ElsoAllomas First element of the linked list.
      */
-    Jarat(std::string Nev,Vonat *JVonat = nullptr, Menetrend *ElsoAllomas = nullptr) : JNev(Nev), JVonat(JVonat), MenetRendArray(ElsoAllomas) {};
+    explicit Jarat(std::string Nev,Vonat *JVonat = nullptr, Menetrend *ElsoAllomas = nullptr);;
     /**
      * Jarat destructor.
      */
