@@ -1,6 +1,7 @@
 #include "JaratWrapper.h"
 #include <string>
 #include <fstream>
+#include <iostream>
 #include <sstream>
 
 JaratWrapper::~JaratWrapper() {
@@ -8,6 +9,10 @@ JaratWrapper::~JaratWrapper() {
         delete nextNode;
     }
     delete this;
+}
+
+void JaratWrapper::PrintJarat() const{
+    std::cout << "Printing Jarat's\n";
 }
 
 Jarat * JaratWrapper::getJarat() {

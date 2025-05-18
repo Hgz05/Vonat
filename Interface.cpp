@@ -1,39 +1,29 @@
 #include "Interface.h"
 #include <iostream>
 int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWrapper *FirstJarat, JegyList *JegyList) {
-    char UserInputChar = '1';
-    int UserInput = UserInputChar - '0';
+    int UserInput = 1;
+
     do {
-        std::cin >> UserInputChar;
-        if (isalpha(UserInputChar)) {
-            std::cout << "Invalid Input!" << std::endl;
-            continue;
+        std::cout << "1. Jaratok Megtekintese\n2. Jegy Vasarlasa\n3. Menedzser Mod (Jaratok, Vonatok Modositasa)\n0. Kilepes\n";
+        UserInput = UserInputChecker();
+        if (UserInput < 0 || UserInput > 3) {
+            std::cout << "Invalid Input!\n";
         }
-        UserInput = UserInputChar - '0';
         switch (UserInput) {
             case 0:
-
                 break;
             case 1:
-
+                JaratInterface(FirstJarat);
                 break;
             case 2:
-
+                JegyListInterface();
                 break;
             case 3:
-
+                ManagerInterface();
                 break;
-            case 4:
-
-                break;
-            case 5:
-
-                break;
-            default:
-                std::cout << "Invalid Input!\n";
+                default:
                 break;
         }
-
 
     }while(UserInput != 0 );
 
@@ -43,4 +33,36 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
     Allomas::SaveAllomas(FirstAllomas);
 
     return 0;
+}
+
+void Interface::JaratInterface(JaratWrapper const *FirstJarat) {
+    int UserInput = 1;
+    FirstJarat->PrintJarat();
+    do {
+        std::cout << "0. Vissza\n";
+        UserInput = UserInputChecker();
+        if (UserInput != 0) {
+            std::cout << "Invalid Input!\n";
+        }
+    }while(UserInput != 0 );
+
+}
+
+void Interface::JegyListInterface() {
+}
+
+void Interface::ManagerInterface() {
+}
+
+int Interface::UserInputChecker() {
+    std::string UserInputString;
+    std::cin >> UserInputString;
+    if (UserInputString.length() > 1) {
+        return -1;
+    }
+    char UserInputChar = UserInputString[0];
+    if (isalpha(UserInputChar)) {
+        return -1;
+    }
+    return UserInputChar - '0';
 }
