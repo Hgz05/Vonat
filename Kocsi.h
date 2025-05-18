@@ -11,7 +11,6 @@ enum eKocsiTipus
 };
 class Kocsi
 {
-private:
     Kocsi *nextNode = nullptr;
     int KocsiSzam;
     eKocsiTipus KocsiTipus;
@@ -24,6 +23,8 @@ public:
     int getKocsiSzam();
     eKocsiTipus getKocsiTipus();
     Ules* FindUlesBySzam(int UlesSzam);
+    void PrintKocsik();
+    std::string enumToString(eKocsiTipus KocsiTipus);
     static eKocsiTipus stringToKocsiTipus(const std::string KocsiTipus);
     Kocsi *getNextNode();
     void setNextNode(Kocsi *nextPtr);

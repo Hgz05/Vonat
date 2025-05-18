@@ -35,7 +35,7 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
     return 0;
 }
 
-void Interface::JaratInterface(JaratWrapper const *FirstJarat) {
+void Interface::JaratInterface(JaratWrapper *FirstJarat) {
     int UserInput;
     FirstJarat->PrintJarat();
     do {

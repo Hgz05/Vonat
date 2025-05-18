@@ -10,7 +10,7 @@ class JaratWrapper {
     public:
     JaratWrapper(Jarat* JaratPtr = nullptr) : currJarat(JaratPtr){};
     ~JaratWrapper();
-    void PrintJarat() const;
+    void PrintJarat();
     Jarat* getJarat();
     JaratWrapper* getNextNode();
     static JaratWrapper* InitJaratWrapper(Allomas* FirstAllomas, Vonat** VonatArray);

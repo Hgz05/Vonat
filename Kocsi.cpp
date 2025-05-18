@@ -54,6 +54,31 @@ Ules * Kocsi::FindUlesBySzam(int UlesSzam) {
     return UlesArray[(UlesSzam - 1)-((KocsiSzam-1)*60)];
 }
 
+void Kocsi::PrintKocsik(){
+    Kocsi* tmp = this;
+    while (tmp != nullptr) {
+        std::cout <<"Kocsiszam:\n";
+        std::cout << tmp->getKocsiSzam();
+        std::cout << "\n\nKocsitipus:\n";
+        std::cout << this->enumToString(KocsiTipus) << std::endl;
+        tmp = tmp->nextNode;
+    }
+
+}
+
+std::string Kocsi::enumToString(eKocsiTipus KocsiTipus) {
+    if (KocsiTipus == Elso) {
+        return "Elso";
+    }
+    if (KocsiTipus == Masod) {
+        return "Masod";
+    }
+    if (KocsiTipus == Alvo) {
+        return "Alvo";
+    }
+    throw "Invalid enum to string";
+}
+
 eKocsiTipus Kocsi::stringToKocsiTipus(const std::string KocsiTipus) {
     if (KocsiTipus == "Elso") {
         return Elso;

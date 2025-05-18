@@ -105,11 +105,17 @@ int Vonat::getKor() const
 
 void Vonat::printVonatStat() const
 {
-    std::cout << "A vonat tipusa:\t Maximalis sebesseg:\t Vonat kora:\t Kocsik szama:" << std::endl;
+    std::cout << "\nA vonat tipusa:\n\n";
     std::cout << enumToString(getVonatTipus());
-    std::cout << "\t" << std::to_string(getMaxSeb());
-    std::cout << "\t" << std::to_string(getKor());
-    std::cout << "\t" << std::to_string(getKocsiDarab()) << std::endl;
+    std::cout << "\n\nMaximalis sebesseg:\n";
+    std::cout <<  std::to_string(getMaxSeb());
+    std::cout << "\n\nVonat kora:\n";
+    std::cout <<  std::to_string(getKor());
+    std::cout <<   "\n\nKocsik szama:\n";
+    std::cout <<  std::to_string(getKocsiDarab()) << std::endl;
+    std::cout << "\nKocsik:\n";
+    KocsiArray->PrintKocsik();
+
 }
 
 Kocsi * Vonat::FindKocsiBySzam(int KocsiSzam) {

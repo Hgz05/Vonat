@@ -11,8 +11,15 @@ JaratWrapper::~JaratWrapper() {
     delete this;
 }
 
-void JaratWrapper::PrintJarat() const{
-    std::cout << "Printing Jarat's\n";
+void JaratWrapper::PrintJarat() {
+    JaratWrapper* tmp = this;
+    while (tmp != nullptr) {
+        tmp->currJarat->PrintJarat();
+        tmp->currJarat->getFirstMenetrend()->printAllInfo();
+        tmp->currJarat->getJVonat()->printVonatStat();
+
+        tmp = tmp->nextNode;
+    }
 }
 
 Jarat * JaratWrapper::getJarat() {

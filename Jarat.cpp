@@ -1,5 +1,8 @@
 #include "Jarat.h"
 
+#include <iostream>
+#include <bits/ostream.tcc>
+
 Jarat::~Jarat()
 {
     delete MenetRendArray;
@@ -7,6 +10,12 @@ Jarat::~Jarat()
 
 std::string Jarat::getJaratName() {
     return JNev;
+}
+
+void Jarat::PrintJarat() const {
+    std::cout << "\n\n\n";
+    std::cout <<JNev << std::endl << std::endl;
+
 }
 
 void Jarat::setJVonat(Vonat *sVonat)

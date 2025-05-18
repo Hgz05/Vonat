@@ -20,6 +20,7 @@ public:
     void printKeses();
     void setKeses(int Perc);
     void printInfo();
+    void printAllInfo();
     Menetrend *getNextNode();
     Allomas* FindAllomasByName(std::string Name);
     void operator+(Menetrend *newMenetrend);

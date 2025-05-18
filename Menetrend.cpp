@@ -54,6 +54,14 @@ void Menetrend::printInfo()
     std::cout << std::endl;
 }
 
+void Menetrend::printAllInfo() {
+    Menetrend* tmp = this;
+    while (tmp != nullptr) {
+        tmp->printInfo();
+        tmp = tmp->nextNode;
+    }
+}
+
 Menetrend *Menetrend::getNextNode()
 {
     return nextNode;
