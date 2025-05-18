@@ -57,7 +57,7 @@ public:
      * @param KocsiDarab Amount of cars attached to the train.
      * @param Kor Age of the train.
      */
-    explicit Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int KocsiDarab = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), KocsiDarab(KocsiDarab), Kor(Kor) {};
+    explicit Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int KocsiDarab = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), Kor(Kor), KocsiDarab(KocsiDarab) {};
     /**
      * Vonat copyconstructor.
      * @param VonatCopy Vonat class to copy.
@@ -134,7 +134,7 @@ public:
      * @param VString Input string.
      * @return True of False.
      */
-    static int CheckStringInt(std::string VString);
+    static int CheckStringInt(const std::string &VString);
     /**
      * Finds a kocsi pointer by an int value
      * @param KocsiSzam The search parameter.

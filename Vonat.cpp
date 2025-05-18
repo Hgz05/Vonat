@@ -187,9 +187,9 @@ Vonat** Vonat::CreateNewVonat(Vonat **VonatArray) {
     return VonatArray;
 }
 
-int Vonat::CheckStringInt(std::string VString) {
-    for (int i = 0; i < VString.size(); i++) {
-        if (isalpha(VString[i])) {
+int Vonat::CheckStringInt(const std::string &VString) {
+    for (char i : VString) {
+        if (isalpha(i)) {
             return 1;
         }
     }
@@ -282,14 +282,14 @@ void Vonat::SaveVonat(Vonat **VonatArray) {
     }
     for (int i = 0; i<VonatArraySize; i++) {
         if (VonatArraySize-i == 1) {
-            std::string VonatTipus = VonatArray[i]->enumToString(VonatArray[i]->getVonatTipus());
+            std::string VonatTipus = Vonat::enumToString(VonatArray[i]->getVonatTipus());
             std::string VonatSzam = std::to_string(VonatArray[i]->getVonatSzam());
             std::string MaxSeb = std::to_string(VonatArray[i]->getMaxSeb());
             std::string Kor = std::to_string(VonatArray[i]->getKor());
             std::string KocsiDarab = std::to_string(VonatArray[i]->getKocsiDarab());
             file << VonatTipus <<";"<< VonatSzam<<";"<< MaxSeb<<";"<< Kor<<";"<< KocsiDarab<<";"<< VonatArray[i]->getKocsi()->KocsiToFile();
         } else{
-            std::string VonatTipus = VonatArray[i]->enumToString(VonatArray[i]->getVonatTipus());
+            std::string VonatTipus = Vonat::enumToString(VonatArray[i]->getVonatTipus());
             std::string VonatSzam = std::to_string(VonatArray[i]->getVonatSzam());
             std::string MaxSeb = std::to_string(VonatArray[i]->getMaxSeb());
             std::string Kor = std::to_string(VonatArray[i]->getKor());
