@@ -19,6 +19,7 @@ public:
     Allomas *getAllomas() const;
     void printKeses();
     void setKeses(int Perc);
+    void setKesesToALl(int Perc);
     void printInfo();
     void printAllInfo();
     Menetrend *getNextNode();

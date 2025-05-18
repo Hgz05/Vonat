@@ -129,6 +129,78 @@ Kocsi * Vonat::FindKocsiBySzam(int KocsiSzam) {
     return tmp;
 }
 
+Vonat** Vonat::CreateNewVonat(Vonat **VonatArray) {
+    std::string VTipus;
+    std::cout << "Vonat Tipusa (InterCity, Gyors, Zonazo, Szemelyi)\n";
+    std::cin >> VTipus;
+    if (VTipus != "InterCity" && VTipus != "Gyors" && VTipus != "Zonazo" && VTipus != "Szemelyi") {
+        throw "Invalid VonatTipus!\n";
+    }
+    std::string VNev;
+    std::cout << "\n\nVonat neve:\n";
+    std::cin >> VNev;
+    std::string VSzamS;
+    std::cout << "\n\nVonat Szama\n";
+    std::cin >> VSzamS;
+    if(CheckStringInt(VSzamS)) {
+        throw "Invalid input!\n";
+    }
+    int VSzam = std::stoi(VSzamS);
+    std::string VMaxSebS;
+    std::cout << "\n\nMaximalis Sebesseg:\n";
+    std::cin >> VMaxSebS;
+    if(CheckStringInt(VMaxSebS)) {
+        throw "Invalid input!\n";
+    }
+    int VMaxSeb = std::stoi(VMaxSebS);
+    std::cout << "\n\nVonat Kora:\n";
+    std::string VKorS;
+    std::cin >> VKorS;
+    if (CheckStringInt(VKorS)) {
+        throw "Invalid input!";
+    }
+    int VKor = std::stoi(VKorS);
+    std::cout << "\n\nKocsik Szama:\n";
+    std::string VKocsiDbS;
+    std::cin >> VKocsiDbS;
+    if (CheckStringInt(VKocsiDbS)) {
+        throw "Invalid input!";
+    }
+    int VKocsiDb = std::stoi(VKocsiDbS);
+    std::string *TipusArray = new std::string[VKocsiDb];
+    for (int i = 0; i < VKocsiDb; i++) {
+        std::cout << i+1 <<". Kocsi Tipusa (Elso,Masod,Alvo)\n";
+        std::cin >> TipusArray[i];
+        if (TipusArray[i] != "Elso" && TipusArray[i] != "Masod" && TipusArray[i] != "Alvo" ) {
+            throw "Invalid KocsiTipus!";
+        }
+    }
+    bool FirsKocsiExists = false;
+    Kocsi* FirstKocsi = nullptr;
+    for (int i = 0; i < VKocsiDb; i++) {
+        if (!FirsKocsiExists) {
+                FirstKocsi = new Kocsi(i+1, Kocsi::stringToKocsiTipus(TipusArray[i]));
+                FirsKocsiExists = true;
+        } else{
+            Kocsi* NextKocsi = new Kocsi(i+1, Kocsi::stringToKocsiTipus(TipusArray[i]));
+            FirstKocsi->operator+(NextKocsi);
+        }
+    }
+    Vonat *VonatToAdd = new Vonat(stringToVonatTipus(VTipus),VSzam,FirstKocsi,VMaxSeb,VKocsiDb,VKor);
+    VonatArray = AddToVonatArray(VonatArray, VonatToAdd);
+    delete[] TipusArray;
+    return VonatArray;
+}
+
+int Vonat::CheckStringInt(std::string VString) {
+    for (int i = 0; i < VString.size(); i++) {
+        if (isalpha(VString[i])) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 Vonat** Vonat::InitVonat() {
 
     bool FirstVonatExists = false;

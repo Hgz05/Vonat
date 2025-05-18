@@ -19,18 +19,17 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
                 JegyListInterface(FirstJarat, JegyList);
                 break;
             case 3:
-                ManagerInterface();
+                ManagerInterface(VonatArray,FirstJarat);
                 break;
                 default:
                 break;
         }
 
     }while(UserInput != 0 );
-
+    delete FirstJarat; //Fix
     JegyList::SaveJegyList(JegyList);
     JaratWrapper::SaveJaratWrapper(FirstJarat);
     Vonat::SaveVonat(VonatArray);
-    Allomas::SaveAllomas(FirstAllomas);
 
     return 0;
 }
@@ -75,24 +74,30 @@ void Interface::JegyListInterface(JaratWrapper *FirstJarat, JegyList *JegyList) 
     }while (UserInput != 0);
 }
 
-void Interface::ManagerInterface() {
+void Interface::ManagerInterface(Vonat **VonatArray, JaratWrapper *FirstJarat) {
     int UserInput;
     do {
+        std::cout << "1. Vonat Hozzaadasa\n2. Keses Bejelentese\n0. Kilepes\n";
         UserInput = UserInputChecker();
-        if (UserInput < 0 || UserInput > 3) {
+        if (UserInput < 0 || UserInput > 2) {
             std::cout << "Invalid Input!\n";
         }
         switch (UserInput) {
             case 0:
                 break;
             case 1:
-
+            try {
+                VonatArray = Vonat::CreateNewVonat(VonatArray);
+            }catch (const char * e ) {
+                std::cout << e;
+            }
                 break;
             case 2:
-
-                break;
-            case 3:
-
+                try {
+                    FirstJarat->AddKeses();
+                }catch (const char * e ) {
+                    std::cout << e;
+                }
                 break;
             default:
                 break;

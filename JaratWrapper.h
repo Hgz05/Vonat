@@ -17,6 +17,7 @@ class JaratWrapper {
     static void SaveJaratWrapper(JaratWrapper* FistJarat);
     void operator+(JaratWrapper* newJaratWrapper);
     Jarat* FindJaratByName(const std::string &Nev);
+    void AddKeses();
 
 };
 

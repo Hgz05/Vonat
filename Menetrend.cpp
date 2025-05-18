@@ -37,6 +37,14 @@ void Menetrend::setKeses(int Perc)
     ErkezoIdo->operator+(Perc);
 }
 
+void Menetrend::setKesesToALl(int Perc) {
+    Menetrend* tmp = this;
+    while (tmp != nullptr) {
+        tmp->setKeses(Perc);
+        tmp = tmp->getNextNode();
+    }
+}
+
 void Menetrend::printInfo()
 {
 

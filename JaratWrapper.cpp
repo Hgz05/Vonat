@@ -136,3 +136,22 @@ Jarat * JaratWrapper::FindJaratByName(const std::string &Nev) {
     }
     throw "Jarat with that Name does not exist!";
 }
+
+void JaratWrapper::AddKeses() {
+    std::string JNev;
+    std::cout << "Jarat Neve:\n";
+    std::cin >> JNev;
+    try {
+        FindJaratByName(JNev);
+    }catch (const char* e) {
+        std::cout << e;
+    }
+    std::string SPerc;
+    std::cout << "Keses (Perc):";
+    std::cin >> SPerc;
+    int Keses = stoi(SPerc);
+    if (Keses <= 0 || Keses > 60) {
+        throw "Invalid number for Keses!";
+    }
+    FindJaratByName(JNev)->getFirstMenetrend()->setKesesToALl(Keses);
+}
