@@ -1,7 +1,7 @@
 #include "Menetrend.h"
 #include <iostream>
 
-Menetrend::Menetrend(const Allomas *MAlomas, int ID, Ido *ErkIdo, Ido *IndIdo) {
+Menetrend::Menetrend( Allomas *MAlomas, int ID, Ido *ErkIdo, Ido *IndIdo) {
     MenetrendID = ID;
     CurrAllomas = MAlomas;
     ErkezoIdo = ErkIdo;
@@ -19,6 +19,10 @@ Ido Menetrend::getErkezoIdo() const
 Ido Menetrend::getInduloIdo() const
 {
     return *InduloIdo;
+}
+
+Allomas * Menetrend::getAllomas() const {
+    return CurrAllomas;
 }
 
 void Menetrend::printKeses()
@@ -53,6 +57,19 @@ void Menetrend::printInfo()
 Menetrend *Menetrend::getNextNode()
 {
     return nextNode;
+}
+
+Allomas* Menetrend::FindAllomasByName(std::string Name) {
+    Menetrend* tmp = this;
+    while (tmp->nextNode != nullptr && tmp->getAllomas()->getAllomasNev() != Name ) {
+        tmp = tmp->getNextNode();
+    }
+    if (tmp->getAllomas()->getAllomasNev() != Name) {
+        throw "Allomas by this name does not exist.";
+    }
+    return tmp->getAllomas();
+
+
 }
 
 void Menetrend::operator+(Menetrend *newMenetrend)

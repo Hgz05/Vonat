@@ -23,6 +23,7 @@ public:
     ~Kocsi();
     int getKocsiSzam();
     eKocsiTipus getKocsiTipus();
+    Ules* FindUlesBySzam(int UlesSzam);
     static eKocsiTipus stringToKocsiTipus(const std::string KocsiTipus);
     Kocsi *getNextNode();
     void setNextNode(Kocsi *nextPtr);

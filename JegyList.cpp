@@ -1,6 +1,9 @@
 #include "JegyList.h"
+
+#include <cmath>
 #include <string>
 #include <fstream>
+#include <iostream>
 #include <sstream>
 #include <typeinfo>
 
@@ -75,6 +78,94 @@ void JegyList::DeleteFromJEgyArray(Jegy *JegyToRemove) {
     JegyArray = NewJegyArray;
 }
 
+void JegyList::BuyJegy(JaratWrapper* FirstJarat) {
+    std::string JaratNev;
+    Jarat* JaratToAssign = nullptr;
+    Allomas* FelAllomas =nullptr;
+    Allomas* LeAllomas =nullptr;
+    bool Helyjegy = false;
+    int Jegyar;
+
+    std::cout << "Jarat neve?\n";
+    try {
+        std::cin >> JaratNev;
+        JaratToAssign = FirstJarat->FindJaratByName(JaratNev);
+    } catch (const char* e) {
+        std::cout << e;
+        return;
+    }
+    std::cout << "Hol szall fel?\n";
+    std::string FelSzal;
+    try {
+        std::cin >> FelSzal;
+        FelAllomas = FirstJarat->FindJaratByName(JaratNev)->getFirstMenetrend()->FindAllomasByName(FelSzal);
+    }catch (const char* e) {
+        std::cout << e;
+        return;
+    }
+    std::cout << "Hol szall le?\n";
+    std::string LeSzal;
+    try {
+        std::cin >> LeSzal;
+        LeAllomas = FirstJarat->FindJaratByName(JaratNev)->getFirstMenetrend()->FindAllomasByName(LeSzal);
+    }catch (const char* e) {
+        std::cout << e;
+        return;
+    }
+    if (JaratToAssign->getJVonat()->getVonatTipus() == InterCity) {
+        double UlesSzam;
+        std::cout << "Jegy Kivalasztasa:\n1. Manualis\n2. Ablak Melle\n";
+        std::string Input;
+        std::cin >> Input;
+        if (Input.length() > 1) {
+            std::cout << "Invalid input!\n";
+            return;
+        }
+        char InputChar = Input[0];
+        if (isalpha(InputChar)) {
+            std::cout << "Invalid input!\n";
+            return;
+        }
+        int InputInt = InputChar - '0';
+        if (InputInt != 1 && InputInt != 2) {
+            std::cout << "Invalid input!\n";
+            return;
+        }
+        bool UlesSzabad = false;
+        if (InputInt == 1) {
+            std::cin >> UlesSzam;
+            try {
+                UlesSzabad = JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->getSzabad();
+            }catch (const char* e) {
+                std::cout << e;
+                return;
+            }
+            if (UlesSzabad) {
+                JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->setSzabad();
+            } else {
+                std::cout << "Ez az ules nem szabad!";
+                return;
+            }
+        } else if (InputInt == 2) {
+            UlesSzam = 2;
+            do {
+                UlesSzabad = JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->getUlesSzam();
+                if (UlesSzam == 60*JaratToAssign->getJVonat()->getKocsiDarab() && !UlesSzabad) {
+                    std::cout<< "Nincs szabad ules!";
+                    return;
+                }
+            }while (UlesSzabad == false);
+            JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->setSzabad();
+        }
+        Jegy* NewJegy = new HelyJegy(JaratToAssign,FelAllomas,LeAllomas, 2800, UlesSzam);
+        this->AddToJEgyArray(NewJegy);
+    } else {
+        Jegy* NewJegy = new Jegy(JaratToAssign,FelAllomas,LeAllomas, 1800);
+        this->AddToJEgyArray(NewJegy);
+    }
+
+}
+
 JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas) {
     std::fstream file("JegyList.dat");
     if (!file.is_open()) {
@@ -136,6 +227,7 @@ JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas
         }
 
     }
+    file.close();
     return JegyArray;
 }
 

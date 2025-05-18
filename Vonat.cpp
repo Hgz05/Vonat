@@ -112,6 +112,17 @@ void Vonat::printVonatStat() const
     std::cout << "\t" << std::to_string(getKocsiDarab()) << std::endl;
 }
 
+Kocsi * Vonat::FindKocsiBySzam(int KocsiSzam) {
+    Kocsi* tmp = KocsiArray;
+    while (tmp->getNextNode() != nullptr && tmp->getKocsiSzam() != KocsiSzam) {
+        tmp = tmp->getNextNode();
+    }
+    if (tmp->getKocsiSzam() != KocsiSzam) {
+        throw "Kocsi with this KocsiSzam does not exsit!";
+    }
+    return tmp;
+}
+
 Vonat** Vonat::InitVonat() {
 
     bool FirstVonatExists = false;
@@ -188,6 +199,7 @@ Vonat** Vonat::InitVonat() {
 
         //Vonat add to array and kocsi link to vonat
     }
+    file.close();
     return VonatArray;
 }
 

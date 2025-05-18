@@ -18,8 +18,6 @@ int main(int argc, char const *argv[]) {
     if ( Interface::InterfaceInit(FirstAllomas,VonatArray,FirstJarat,JegyList) == 0) {
         return 0;
     }
-    return 0;
-
 }
 
 // Default Test

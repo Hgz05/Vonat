@@ -1,7 +1,7 @@
 #include "Interface.h"
 #include <iostream>
 int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWrapper *FirstJarat, JegyList *JegyList) {
-    int UserInput = 1;
+    int UserInput;
 
     do {
         std::cout << "1. Jaratok Megtekintese\n2. Jegy Vasarlasa\n3. Menedzser Mod (Jaratok, Vonatok Modositasa)\n0. Kilepes\n";
@@ -16,7 +16,7 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
                 JaratInterface(FirstJarat);
                 break;
             case 2:
-                JegyListInterface();
+                JegyListInterface(FirstJarat, JegyList);
                 break;
             case 3:
                 ManagerInterface();
@@ -36,7 +36,7 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
 }
 
 void Interface::JaratInterface(JaratWrapper const *FirstJarat) {
-    int UserInput = 1;
+    int UserInput;
     FirstJarat->PrintJarat();
     do {
         std::cout << "0. Vissza\n";
@@ -48,10 +48,57 @@ void Interface::JaratInterface(JaratWrapper const *FirstJarat) {
 
 }
 
-void Interface::JegyListInterface() {
+void Interface::JegyListInterface(JaratWrapper *FirstJarat, JegyList *JegyList) {
+    int UserInput;
+    do {
+        std::cout << "1. Jaratok Megtekintese\n2. Jegy Vasarlasa\n3. Jegyeim Megtekintese\n0. Kilepes\n";
+        UserInput = UserInputChecker();
+        if (UserInput < 0 || UserInput > 3) {
+            std::cout << "Invalid Input!\n";
+        }
+        switch (UserInput) {
+            case 0:
+                break;
+            case 1:
+                JaratInterface(FirstJarat);
+                break;
+            case 2:
+                JegyList->BuyJegy(FirstJarat);
+                break;
+            case 3:
+
+                break;
+            default:
+                break;
+        }
+
+    }while (UserInput != 0);
 }
 
 void Interface::ManagerInterface() {
+    int UserInput;
+    do {
+        UserInput = UserInputChecker();
+        if (UserInput < 0 || UserInput > 3) {
+            std::cout << "Invalid Input!\n";
+        }
+        switch (UserInput) {
+            case 0:
+                break;
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            default:
+                break;
+        }
+
+    }while (UserInput != 0);
 }
 
 int Interface::UserInputChecker() {

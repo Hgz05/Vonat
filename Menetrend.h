@@ -5,7 +5,7 @@
 class Menetrend
 {
     Menetrend *nextNode = nullptr;
-    const Allomas *CurrAllomas;
+    Allomas *CurrAllomas;
     int MenetrendID;
     Ido *ErkezoIdo;
     Ido *InduloIdo;
@@ -13,13 +13,15 @@ class Menetrend
     Ido *EredInduloIdo;
 
 public:
-    Menetrend(const Allomas *MAllomas = nullptr, int ID = -1 ,Ido *ErkIdo = nullptr, Ido *IndIdo = nullptr);
+    Menetrend(Allomas *MAllomas = nullptr, int ID = -1 ,Ido *ErkIdo = nullptr, Ido *IndIdo = nullptr);
     Ido getErkezoIdo() const;
     Ido getInduloIdo() const;
+    Allomas *getAllomas() const;
     void printKeses();
     void setKeses(int Perc);
     void printInfo();
     Menetrend *getNextNode();
+    Allomas* FindAllomasByName(std::string Name);
     void operator+(Menetrend *newMenetrend);
     void deleteElement(Menetrend *curr);
     ~Menetrend();

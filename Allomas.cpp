@@ -119,6 +119,7 @@ Allomas* Allomas::InitAllomas() {
     if (FirstAllomas == nullptr) {
         throw "FirstAllomas was not initialised!";
     }
+    file.close();
     return FirstAllomas;
 
 }

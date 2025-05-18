@@ -50,6 +50,10 @@ eKocsiTipus Kocsi::getKocsiTipus()
     return KocsiTipus;
 }
 
+Ules * Kocsi::FindUlesBySzam(int UlesSzam) {
+    return UlesArray[(UlesSzam - 1)-((KocsiSzam-1)*60)];
+}
+
 eKocsiTipus Kocsi::stringToKocsiTipus(const std::string KocsiTipus) {
     if (KocsiTipus == "Elso") {
         return Elso;

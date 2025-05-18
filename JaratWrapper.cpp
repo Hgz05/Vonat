@@ -102,7 +102,7 @@ JaratWrapper * JaratWrapper::InitJaratWrapper(Allomas* FirstAllomas, Vonat** Von
         }
         ElsoMenetrendExist = false;
     }
-
+    file.close();
     return ElsoJaratWrapper;
 }
 

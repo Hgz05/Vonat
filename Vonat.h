@@ -37,6 +37,7 @@ public:
     int getKocsiDarab() const;
     int getKor() const;
     void printVonatStat() const;
+    Kocsi* FindKocsiBySzam(int KocsiSzam);
     static Vonat** InitVonat();
     static void SaveVonat(Vonat** VonatArray);
     static Vonat** AddToVonatArray(Vonat** VonatArray, Vonat* VonatToAdd);
