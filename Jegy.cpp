@@ -8,6 +8,10 @@ Jegy::Jegy(Jegy *CopyJegy) {
     Jegyar = CopyJegy->getJegyAr();
 }
 
+Jegy * Jegy::Clone() {
+    return new Jegy(this);
+}
+
 Jarat * Jegy::getJarat() {
     return JJarat;
 }

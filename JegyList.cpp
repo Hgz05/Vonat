@@ -45,11 +45,7 @@ void JegyList::AddToJEgyArray(Jegy *JegyToAdd) {
     }
     Jegy** NewJegyArray = new Jegy*[JegyArraySize+1];
     for (int i = 0; i < JegyArraySize; i++) {
-        if (typeid(JegyArray[i]) == typeid(HelyJegy)) {
-            NewJegyArray[i] = new Jegy(JegyArray[i]); //HelyJegy copy
-        } else {
-            NewJegyArray[i] = new Jegy(JegyArray[i]);
-        }
+        NewJegyArray[i] = JegyArray[i]->Clone();
     }
     delete[] JegyArray;
     NewJegyArray[JegyArraySize] = JegyToAdd;
@@ -65,11 +61,8 @@ void JegyList::DeleteFromJEgyArray(Jegy *JegyToRemove) {
     Jegy** NewJegyArray = new Jegy*[JegyArraySize-1];
     for (int i = 0; i < JegyArraySize; i++) {
         if (JegyArray[i] != JegyToRemove) {
-            if (typeid(JegyArray[i]) == typeid(HelyJegy))
-            NewJegyArray[j] = new Jegy(JegyArray[i]); //Helyjegy Copy
-            j++;
-        } else {
-            NewJegyArray[j] = new Jegy(JegyArray[i]);
+
+            NewJegyArray[j] = JegyArray[i]->Clone();
             j++;
         }
     }

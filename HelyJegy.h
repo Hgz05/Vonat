@@ -8,6 +8,7 @@ class HelyJegy : public Jegy
 public:
     HelyJegy(Jarat *FelJarat = nullptr, Allomas *Elso = nullptr, Allomas *Utolso = nullptr, int Ar = -1, int Ules = -1) : Jegy(FelJarat,Elso,Utolso,Ar), UlesSzam(Ules){};
     HelyJegy(HelyJegy* CopyHelyJegy): Jegy(CopyHelyJegy), UlesSzam(CopyHelyJegy->UlesSzam){};
+    Jegy* Clone() override;;
     ~HelyJegy() =default;
     int getUlesSzam() const;
     void PrintJegy() const override;

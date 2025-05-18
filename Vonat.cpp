@@ -282,6 +282,12 @@ Vonat** Vonat::InitVonat() {
 }
 
 void Vonat::SaveVonat(Vonat **VonatArray) {
+    std::ofstream file("Vonat.dat");
+    if (!file.is_open()) {
+        throw "Vonat file could not be opened!";
+    }
+
+
 }
 
 Vonat ** Vonat::AddToVonatArray(Vonat **VonatArray, Vonat *VonatToAdd) {
