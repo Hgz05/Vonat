@@ -16,6 +16,7 @@ class JegyList {
     void AddToJEgyArray(Jegy* JegyToAdd);
     void DeleteFromJEgyArray(Jegy* JegyToRemove);
     void BuyJegy(JaratWrapper* FirstJarat);
+    void PrintJegyList() const;
     static JegyList* InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas);
     static void SaveJegyList(JegyList* JegyList);
 };

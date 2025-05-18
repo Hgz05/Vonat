@@ -31,5 +31,5 @@ void Jegy::PrintJegy() const {
     std::cout <<"\n" <<ElsoAllomas->getAllomasNev() << " Allomastol\n";
     std::cout << VegAllomas->getAllomasNev() << " Allomasig\n";
     std::cout << "Jegyar: ";
-    std::cout << std::to_string(this->getJegyAr()) << "\n";
+    std::cout << std::to_string(this->getJegyAr()) << "\n\n";
 }

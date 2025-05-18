@@ -166,6 +166,12 @@ void JegyList::BuyJegy(JaratWrapper* FirstJarat) {
 
 }
 
+void JegyList::PrintJegyList() const {
+    for (int i = 0;i<JegyArraySize;i++) {
+        JegyArray[i]->PrintJegy();
+    }
+}
+
 JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas) {
     std::fstream file("JegyList.dat");
     if (!file.is_open()) {

@@ -66,7 +66,7 @@ void Interface::JegyListInterface(JaratWrapper *FirstJarat, JegyList *JegyList) 
                 JegyList->BuyJegy(FirstJarat);
                 break;
             case 3:
-
+                JegyList->PrintJegyList();
                 break;
             default:
                 break;
