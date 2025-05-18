@@ -6,12 +6,12 @@ class HelyJegy : public Jegy
     int UlesSzam;
     
 public:
-    HelyJegy(Jarat *FelJarat = nullptr, Allomas *Elso = nullptr, Allomas *Utolso = nullptr, int Ar = -1, int Ules = -1) : Jegy(FelJarat,Elso,Utolso,Ar), UlesSzam(Ules){};
-    HelyJegy(HelyJegy* CopyHelyJegy): Jegy(CopyHelyJegy), UlesSzam(CopyHelyJegy->UlesSzam){};
+    explicit HelyJegy(Jarat *FelJarat = nullptr, Allomas *Elso = nullptr, Allomas *Utolso = nullptr, int Ar = -1, int Ules = -1) : Jegy(FelJarat,Elso,Utolso,Ar), UlesSzam(Ules){};
+    explicit HelyJegy(HelyJegy* CopyHelyJegy): Jegy(CopyHelyJegy), UlesSzam(CopyHelyJegy->UlesSzam){};
     Jegy* Clone() override;
     std::string FileToWrite() override;
     int getUlesSzam() const;
-    ~HelyJegy() =default;
+    ~HelyJegy() override = default;
     void PrintJegy() const override;
 
 };

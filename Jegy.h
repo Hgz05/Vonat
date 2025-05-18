@@ -10,8 +10,8 @@ class Jegy
     int Jegyar;
 
 public:
-    Jegy(Jarat *FelJarat = nullptr, Allomas *Elso = nullptr, Allomas *Utolso = nullptr, int Ar = -1) : JJarat(FelJarat), ElsoAllomas(Elso), VegAllomas(Utolso), Jegyar(Ar) {};
-    Jegy(Jegy* CopyJegy);
+    explicit Jegy(Jarat *FelJarat = nullptr, Allomas *Elso = nullptr, Allomas *Utolso = nullptr, int Ar = -1) : JJarat(FelJarat), ElsoAllomas(Elso), VegAllomas(Utolso), Jegyar(Ar) {};
+    explicit Jegy(Jegy* CopyJegy);
     virtual Jegy* Clone();
     virtual ~Jegy() = default;
     Jarat* getJarat();

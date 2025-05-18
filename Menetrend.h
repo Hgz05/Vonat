@@ -13,7 +13,7 @@ class Menetrend
     Ido *EredInduloIdo;
 
 public:
-    Menetrend(Allomas *MAllomas = nullptr, int ID = -1 ,Ido *ErkIdo = nullptr, Ido *IndIdo = nullptr);
+    explicit Menetrend(Allomas *MAllomas = nullptr, int ID = -1 ,Ido *ErkIdo = nullptr, Ido *IndIdo = nullptr);
     Ido getErkezoIdo() const;
     Ido getInduloIdo() const;
     Allomas *getAllomas() const;
@@ -23,7 +23,7 @@ public:
     void printInfo();
     void printAllInfo();
     Menetrend *getNextNode();
-    Allomas* FindAllomasByName(std::string Name);
+    Allomas* FindAllomasByName(const std::string &Name);
     void operator+(Menetrend *newMenetrend);
     void deleteElement(Menetrend *curr);
     ~Menetrend();

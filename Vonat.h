@@ -21,15 +21,18 @@ class Vonat
 
 public:
 
-    Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int KocsiDarab = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), KocsiDarab(KocsiDarab), Kor(Kor) {};
-    Vonat(Vonat* VonatCopy);
-    Kocsi* copyKocsiArray(Kocsi* NextNode);
+    explicit Vonat(eVonatTipus VonatTipus = Szemelyi, int VonatSzam = 1, Kocsi *KocsiArray = nullptr, int MaxSeb = 80, int KocsiDarab = 10, int Kor = 45) : VonatTipus(VonatTipus), VonatSzam(VonatSzam), KocsiArray(KocsiArray), MaxSeb(MaxSeb), KocsiDarab(KocsiDarab), Kor(Kor) {};
+    explicit Vonat(Vonat* VonatCopy);
+
+    static Kocsi* copyKocsiArray(Kocsi* NextNode);
     ~Vonat();
-    void DeleteKocsiArray(Kocsi* ArrayElement);
+
+    static void DeleteKocsiArray(Kocsi* ArrayElement);
 
     eVonatTipus getVonatTipus() const;
-    static eVonatTipus stringToVonatTipus(std::string VonatTipus);
-    std::string enumToString(eVonatTipus type) const;
+    static eVonatTipus stringToVonatTipus(const std::string& VonatTipus);
+
+    static std::string enumToString(eVonatTipus type);
 
     int getVonatSzam() const;
     Kocsi *getKocsi();

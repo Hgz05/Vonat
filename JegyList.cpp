@@ -53,7 +53,7 @@ void JegyList::AddToJEgyArray(Jegy *JegyToAdd) {
     JegyArray = NewJegyArray;
 }
 
-void JegyList::DeleteFromJEgyArray(Jegy *JegyToRemove) {
+void JegyList::DeleteFromJEgyArray(const Jegy *JegyToRemove) {
     if (JegyToRemove == nullptr) {
         throw "JegyToRemove is null!";
     }
@@ -76,8 +76,6 @@ void JegyList::BuyJegy(JaratWrapper* FirstJarat) {
     Jarat* JaratToAssign = nullptr;
     Allomas* FelAllomas =nullptr;
     Allomas* LeAllomas =nullptr;
-    bool Helyjegy = false;
-    int Jegyar;
 
     std::cout << "Jarat neve?\n";
     try {
@@ -128,29 +126,29 @@ void JegyList::BuyJegy(JaratWrapper* FirstJarat) {
         if (InputInt == 1) {
             std::cin >> UlesSzam;
             try {
-                UlesSzabad = JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->getSzabad();
+                UlesSzabad = JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(static_cast<int>(UlesSzam))->getSzabad();
             }catch (const char* e) {
                 std::cout << e;
                 return;
             }
             if (UlesSzabad) {
-                JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->setSzabad();
+                JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(static_cast<int>(UlesSzam))->setSzabad();
             } else {
                 std::cout << "Ez az ules nem szabad!";
                 return;
             }
-        } else if (InputInt == 2) {
+        } else {
             UlesSzam = 2;
             do {
-                UlesSzabad = JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->getUlesSzam();
+                UlesSzabad = JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(static_cast<int>(UlesSzam))->getUlesSzam();
                 if (UlesSzam == 60*JaratToAssign->getJVonat()->getKocsiDarab() && !UlesSzabad) {
                     std::cout<< "Nincs szabad ules!";
                     return;
                 }
             }while (UlesSzabad == false);
-            JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(UlesSzam)->setSzabad();
+            JaratToAssign->getJVonat()->FindKocsiBySzam(std::ceil(UlesSzam/60))->FindUlesBySzam(static_cast<int>(UlesSzam))->setSzabad();
         }
-        Jegy* NewJegy = new HelyJegy(JaratToAssign,FelAllomas,LeAllomas, 2800, UlesSzam);
+        Jegy* NewJegy = new HelyJegy(JaratToAssign,FelAllomas,LeAllomas, 2800, static_cast<int>(UlesSzam));
         this->AddToJEgyArray(NewJegy);
     } else {
         Jegy* NewJegy = new Jegy(JaratToAssign,FelAllomas,LeAllomas, 1800);
@@ -204,7 +202,7 @@ JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas
                         Jegy* FirstJegy = new Jegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName), Jegyar);
                         JegyArray = new JegyList(FirstJegy);
                         FirstJegyExists = true;
-                    } else if (FirstJegyExists){
+                    } else{
                         Jegy* JegyToAdd = new Jegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName), Jegyar);
                         JegyArray->AddToJEgyArray(JegyToAdd);
                     }
@@ -217,7 +215,7 @@ JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas
                     Jegy* FirstJegy = new HelyJegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName),Jegyar, UlesSzam);
                     JegyArray = new JegyList(FirstJegy);
                     FirstJegyExists = true;
-                } else if (FirstJegyExists){
+                } else {
                     Jegy* JegyToAdd = new HelyJegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName), Jegyar, UlesSzam);
                     JegyArray->AddToJEgyArray(JegyToAdd);
                 }

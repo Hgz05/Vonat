@@ -76,7 +76,7 @@ Menetrend *Menetrend::getNextNode()
     return nextNode;
 }
 
-Allomas* Menetrend::FindAllomasByName(std::string Name) {
+Allomas* Menetrend::FindAllomasByName(const std::string &Name) {
     Menetrend* tmp = this;
     while (tmp->nextNode != nullptr && tmp->getAllomas()->getAllomasNev() != Name ) {
         tmp = tmp->getNextNode();
@@ -91,7 +91,7 @@ Allomas* Menetrend::FindAllomasByName(std::string Name) {
 
 void Menetrend::operator+(Menetrend *newMenetrend)
 {
-    if (this == nullptr || newMenetrend == nullptr)
+    if (newMenetrend == nullptr)
         throw "Previous or new Menetrend does not exist";
 
     Menetrend *tmp = this;

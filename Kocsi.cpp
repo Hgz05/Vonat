@@ -41,8 +41,7 @@ Kocsi::~Kocsi()
         delete[] UlesArray;
     }
 }
-int Kocsi::getKocsiSzam()
-{
+int Kocsi::getKocsiSzam() const {
     return KocsiSzam;
 }
 

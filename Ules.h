@@ -9,7 +9,7 @@ class Ules
 public:
     Ules() = default;
     ~Ules() = default;
-    Ules(Ules* UlesCopy) {
+    explicit Ules(Ules* UlesCopy) {
         UlesSzam = UlesCopy->UlesSzam;
         AblakMel = UlesCopy->AblakMel;
         Szabad = UlesCopy->Szabad;
@@ -18,8 +18,8 @@ public:
     bool getAblakMel() const;
     bool getSzabad() const;
     void setSzabad();
-    void setUlesSzam(const int szam);
-    void setAblakmel(const bool ablak);
+    void setUlesSzam(int szam);
+    void setAblakmel(bool ablak);
 };
 
 #endif

@@ -30,7 +30,7 @@ bool Ido::operator==(Ido const &Alapido) const
 
 void Ido::operator+(int min)
 {
-    int plusHour;
+    int plusHour = 0;
     perc += min;
     if (perc <= 60)
     {

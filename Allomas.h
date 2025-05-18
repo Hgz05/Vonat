@@ -1,6 +1,7 @@
 #ifndef ALLOMAS_H
 #define ALLOMAS_H
 #include <string>
+#include <utility>
 class Allomas
 {
     Allomas *nextNode = nullptr;
@@ -11,7 +12,7 @@ class Allomas
     bool Bufe;
 
 public:
-    Allomas(std::string Nev = "Timbuktu", double x = -1, double y = -1, bool wc = false, bool bufe = false) : Nev(Nev), Szelesseg(x), Magassag(y), Wc(wc), Bufe(bufe) {};
+    explicit Allomas(std::string Nev = "Timbuktu", double x = -1, double y = -1, bool wc = false, bool bufe = false) : Nev(std::move(Nev)), Szelesseg(x), Magassag(y), Wc(wc), Bufe(bufe) {};
     ~Allomas();
 
     std::string getAllomasNev() const;

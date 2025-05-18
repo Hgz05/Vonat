@@ -89,7 +89,7 @@ JaratWrapper * JaratWrapper::InitJaratWrapper(Allomas* FirstAllomas, Vonat** Von
                         Ido *IndulIdo = new Ido(IndulOra,IndulPerc);
                         ELsoMenetrend = new Menetrend(FirstAllomas->FindAllomasByName(AllomasNev),MenetrendID,ErkezIdo, IndulIdo);
                         ElsoMenetrendExist = true;
-                    } else if (ElsoMenetrendExist) {
+                    } else {
                         Ido *ErkezIdo = new Ido(ErkezOra,ErkezPerc);
                         Ido *IndulIdo = new Ido(IndulOra,IndulPerc);
                         Menetrend* NextMenetrend = new Menetrend(FirstAllomas->FindAllomasByName(AllomasNev),MenetrendID,ErkezIdo, IndulIdo);
@@ -104,7 +104,7 @@ JaratWrapper * JaratWrapper::InitJaratWrapper(Allomas* FirstAllomas, Vonat** Von
             Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam),ELsoMenetrend);
             ElsoJaratWrapper = new JaratWrapper(JaratToAdd);
             ElsoJaratWrapperExists = true;
-        } else if (ElsoJaratWrapperExists) {
+        } else {
             Jarat * JaratToAdd = new Jarat(JaratNev,Vonat::FindVonatByNumber(VonatArray, VonatSzam), ELsoMenetrend);
             JaratWrapper* NextJaratWrapper = new JaratWrapper(JaratToAdd);
             ElsoJaratWrapper->operator+(NextJaratWrapper);
@@ -120,7 +120,7 @@ void JaratWrapper::SaveJaratWrapper(JaratWrapper* FistJarat) {
 }
 
 void JaratWrapper::operator+(JaratWrapper *newJaratWrapper) {
-        if (this == nullptr || newJaratWrapper == nullptr)
+        if (newJaratWrapper == nullptr)
             throw "Previous or new JaratWrapper does not exist";
         JaratWrapper *tmp = this;
         while (tmp->getNextNode() != nullptr)

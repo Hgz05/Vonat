@@ -42,7 +42,7 @@ eVonatTipus Vonat::getVonatTipus() const
     return VonatTipus;
 }
 
-eVonatTipus Vonat::stringToVonatTipus(std::string VonatTipus) {
+eVonatTipus Vonat::stringToVonatTipus(const std::string& VonatTipus) {
     if (VonatTipus == "InterCity") {
         return InterCity;
     } else if (VonatTipus == "Gyors") {
@@ -56,24 +56,18 @@ eVonatTipus Vonat::stringToVonatTipus(std::string VonatTipus) {
     }
 
 
-std::string Vonat::enumToString(eVonatTipus type) const
-{
+std::string Vonat::enumToString(eVonatTipus type) {
     switch (type)
     {
     case 0:
         return "InterCity";
-        break;
     case 1:
         return "Gyors";
-        break;
     case 2:
         return "Zonazo";
-        break;
     case 3:
         return "Szemelyi";
-        break;
     default:
-        "Szemelyi";
         break;
     }
     throw "Enum to String Error!"; // Look at it later
@@ -182,7 +176,7 @@ Vonat** Vonat::CreateNewVonat(Vonat **VonatArray) {
         if (!FirsKocsiExists) {
                 FirstKocsi = new Kocsi(i+1, Kocsi::stringToKocsiTipus(TipusArray[i]));
                 FirsKocsiExists = true;
-        } else{
+        } else if (FirstKocsi != nullptr) {
             Kocsi* NextKocsi = new Kocsi(i+1, Kocsi::stringToKocsiTipus(TipusArray[i]));
             FirstKocsi->operator+(NextKocsi);
         }
@@ -255,7 +249,7 @@ Vonat** Vonat::InitVonat() {
                     if (!FirstKocsiExists) {
                         ElsoKocsi = new Kocsi(KocsiSzam, Kocsi::stringToKocsiTipus(KocsiTipus));
                         FirstKocsiExists = true;
-                    } else if (FirstKocsiExists) {
+                    } else {
                         if (ElsoKocsi == nullptr) {
                             throw "Elso Kocsi Is Null!";
                         }
@@ -271,7 +265,7 @@ Vonat** Vonat::InitVonat() {
             VonatArray[0] = new Vonat(stringToVonatTipus(VonatTipus),VonatSzam,ElsoKocsi, MaxSeb, KocsiDarab, Kor);
             FirstVonatExists = true;
             VonatArraySize = 1;
-        }else if (FirstVonatExists) {
+        }else{
             Vonat* NextVonat = new Vonat(stringToVonatTipus(VonatTipus),VonatSzam, ElsoKocsi, MaxSeb, KocsiDarab, Kor);
             VonatArray = AddToVonatArray(VonatArray, NextVonat);
         }

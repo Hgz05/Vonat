@@ -8,13 +8,13 @@ class JegyList {
     int JegyArraySize = 0;
 
     public:
-    JegyList(Jegy* FirstJegy);
-    JegyList(HelyJegy *FirstHelyJegy);
+    explicit JegyList(Jegy* FirstJegy);
+    explicit JegyList(HelyJegy *FirstHelyJegy);
     ~JegyList();
     void setJegyListSize(int size);
     int getJegyListSize() const;
     void AddToJEgyArray(Jegy* JegyToAdd);
-    void DeleteFromJEgyArray(Jegy* JegyToRemove);
+    void DeleteFromJEgyArray(const Jegy* JegyToRemove);
     void BuyJegy(JaratWrapper* FirstJarat);
     void PrintJegyList() const;
     static JegyList* InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas);

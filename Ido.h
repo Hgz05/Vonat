@@ -5,7 +5,7 @@ struct Ido {
     int perc;
 
 public:
-    Ido(int ora = 0, int perc = 0) : ora(ora), perc(perc) {}
+    explicit Ido(int ora = 0, int perc = 0) : ora(ora), perc(perc) {}
     explicit Ido(Ido* CopyIdo) {
         ora = CopyIdo->ora;
         perc = CopyIdo->perc;
