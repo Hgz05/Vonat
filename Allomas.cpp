@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 
+Allomas::~Allomas() {}
+
 std::string Allomas::getAllomasNev() const
 {
     return Nev;
@@ -27,10 +29,15 @@ bool Allomas::getBufe() const
 {
     return Bufe;
 }
-Allomas *Allomas::getNextNode() const
+Allomas *Allomas::getNextNode()
 {
     return nextNode;
 }
+
+void Allomas::setNextNode(Allomas *nextNode) {
+    this->nextNode = nextNode;
+}
+
 void Allomas::operator+(Allomas *newAllomas)
 {
     if (this == nullptr || newAllomas == nullptr)
@@ -43,6 +50,29 @@ void Allomas::operator+(Allomas *newAllomas)
     }
     tmp->nextNode = newAllomas;
 }
+Allomas* Allomas::AllomasDelete(Allomas *AllomasToDelete, Allomas *ElsoAllomas) {
+    if (AllomasToDelete == ElsoAllomas) {
+        Allomas *tmp = ElsoAllomas;
+        ElsoAllomas = ElsoAllomas->getNextNode();
+        delete tmp;
+
+        return ElsoAllomas;
+    }
+    Allomas *tmp = ElsoAllomas;
+    Allomas *prevNode = ElsoAllomas;
+    while (tmp != AllomasToDelete) {
+        if (tmp == nullptr) {
+            throw "AllomasToDelete does not exist!";
+        }
+        prevNode = tmp;
+        tmp = tmp->getNextNode();
+    }
+    prevNode->setNextNode(tmp->getNextNode());
+    delete tmp;
+    return this;
+
+}
+
 Allomas* Allomas::InitAllomas() {
     int ReadIncrement = 0;
     std::string Name;

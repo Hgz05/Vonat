@@ -4,8 +4,9 @@
 #include "Jegy.h"
 #include "Allomas.h"
 #include "HelyJegy.h"
-#include <iostream>
 #include "JegyList.h"
+#include <iostream>
+
 
 
 int main(int argc, char const *argv[]) {

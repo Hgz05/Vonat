@@ -14,6 +14,5 @@ add_executable(NHFClion main.cpp
         HelyJegy.cpp
         Allomas.cpp
         JaratWrapper.cpp
-        JaratWrapper.h
         JegyList.cpp
-        JegyList.h)
+        )

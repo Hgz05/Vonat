@@ -19,8 +19,10 @@ public:
     double getY() const;
     bool getWc() const;
     bool getBufe() const;
-    Allomas *getNextNode() const;
+    Allomas *getNextNode();
+    void setNextNode(Allomas *nextNode);
     void operator+(Allomas *newAllomas);
+    Allomas* AllomasDelete (Allomas *AllomasToDelete, Allomas* ElsoAllomas);
     static Allomas* InitAllomas();
     Allomas* FindAllomasByName(const std::string& Nev);
 };
