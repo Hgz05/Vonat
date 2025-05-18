@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <typeinfo>
 
 #include "HelyJegy.h"
 
@@ -11,6 +12,15 @@ JegyList::JegyList(Jegy *FirstJegy) {
     }
     JegyArray = new Jegy*[1];
     JegyArray[0] = FirstJegy;
+    JegyArraySize = 1;
+    // Fix this constructor
+}
+JegyList::JegyList(HelyJegy *FirstHelyJegy) {
+    if (FirstHelyJegy == nullptr) {
+        throw "FirstHelyJegy is null!";
+    }
+    JegyArray = new Jegy*[1];
+    JegyArray[0] = FirstHelyJegy;
     JegyArraySize = 1;
     // Fix this constructor
 }
@@ -32,7 +42,11 @@ void JegyList::AddToJEgyArray(Jegy *JegyToAdd) {
     }
     Jegy** NewJegyArray = new Jegy*[JegyArraySize+1];
     for (int i = 0; i < JegyArraySize; i++) {
-        NewJegyArray[i] = new Jegy(JegyArray[i]);
+        if (typeid(JegyArray[i]) == typeid(HelyJegy)) {
+            //NewJegyArray[i] = new HelyJegy(JegyArray[i]);
+        } else {
+            NewJegyArray[i] = new Jegy(JegyArray[i]);
+        }
     }
     delete[] JegyArray;
     NewJegyArray[JegyArraySize] = JegyToAdd;
@@ -48,6 +62,10 @@ void JegyList::DeleteFromJEgyArray(Jegy *JegyToRemove) {
     Jegy** NewJegyArray = new Jegy*[JegyArraySize-1];
     for (int i = 0; i < JegyArraySize; i++) {
         if (JegyArray[i] != JegyToRemove) {
+            if (typeid(JegyArray[i]) == typeid(HelyJegy))
+            //NewJegyArray[j] = new HelyJegy(JegyArray[i]);
+            j++;
+        } else {
             NewJegyArray[j] = new Jegy(JegyArray[i]);
             j++;
         }
