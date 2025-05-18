@@ -116,8 +116,7 @@ JaratWrapper * JaratWrapper::InitJaratWrapper(Allomas* FirstAllomas, Vonat** Von
     return ElsoJaratWrapper;
 }
 
-void JaratWrapper::SaveJaratWrapper(JaratWrapper* FistJarat) {
-}
+
 
 void JaratWrapper::operator+(JaratWrapper *newJaratWrapper) {
         if (newJaratWrapper == nullptr)

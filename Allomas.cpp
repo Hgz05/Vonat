@@ -87,7 +87,7 @@ Allomas* Allomas::InitAllomas() {
     bool Wc;
     bool Bufe;
     bool FirstAllomasExists = false;
-    Allomas* FirstAllomas = nullptr; //Temporary Allomas object
+    Allomas* FirstAllomas = nullptr;
     std::ifstream file("Allomas.dat");
     if (!file.is_open()) {
         throw "Allomas file could not be opened!";

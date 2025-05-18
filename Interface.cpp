@@ -27,7 +27,6 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
         }
 
     }while(UserInput != 0 );
-    JaratWrapper::SaveJaratWrapper(FirstJarat);
     FirstJarat->DelJaratWrapper();
     try {
         JegyList::SaveJegyList(JegyList);

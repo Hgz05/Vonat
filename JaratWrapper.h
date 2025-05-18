@@ -52,11 +52,6 @@ class JaratWrapper {
      */
     static JaratWrapper* InitJaratWrapper(Allomas* FirstAllomas, Vonat** VonatArray);
     /**
-     * File write method.
-     * @param FistJarat JaratWrapper to write.
-     */
-    static void SaveJaratWrapper(JaratWrapper* FistJarat);
-    /**
      * Adds an element to the end of the JaratWrapper linked list.
      * @param newJaratWrapper Element to add.
      */

@@ -22,7 +22,7 @@ Kocsi * Vonat::copyKocsiArray(Kocsi *NextNode) {
     if (NextNode->getNextNode() != nullptr) {
         NextNode->setNextNode(copyKocsiArray(NextNode->getNextNode()));
     }
-    Kocsi* NewKocsi = new Kocsi(NextNode); //This may not work
+    Kocsi* NewKocsi = new Kocsi(NextNode);
     return NewKocsi;
 }
 
@@ -270,7 +270,6 @@ Vonat** Vonat::InitVonat() {
             VonatArray = AddToVonatArray(VonatArray, NextVonat);
         }
 
-        //Vonat add to array and kocsi link to vonat
     }
     file.close();
     return VonatArray;
@@ -301,7 +300,7 @@ void Vonat::SaveVonat(Vonat **VonatArray) {
 
     }
     delete[] VonatArray;
-
+    file.close();
 
 }
 
@@ -312,7 +311,7 @@ Vonat ** Vonat::AddToVonatArray(Vonat **VonatArray, Vonat *VonatToAdd) {
     VonatArraySize++;
     Vonat** NewVonatArray = new Vonat *[VonatArraySize];
     for (int i = 0; i < VonatArraySize-1; i++) {
-        NewVonatArray[i] = new Vonat(VonatArray[i]);// The delete deletes the nextNode
+        NewVonatArray[i] = new Vonat(VonatArray[i]);
     }
     delete[] VonatArray;
     NewVonatArray[VonatArraySize-1] = VonatToAdd;
