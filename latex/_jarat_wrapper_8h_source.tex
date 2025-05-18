@@ -1,0 +1,31 @@
+\doxysection{Jarat\+Wrapper.\+h}
+\hypertarget{_jarat_wrapper_8h_source}{}\label{_jarat_wrapper_8h_source}\mbox{\hyperlink{_jarat_wrapper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JARATWRAPPER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JARATWRAPPER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jarat_8h}{Jarat.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jarat_wrapper_a674a671669d4a136bbeb876a0dc8ceb9}{JaratWrapper}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_jarat}{Jarat}}*\ currJarat;}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_jarat_wrapper_a674a671669d4a136bbeb876a0dc8ceb9}{JaratWrapper}}*\ nextNode\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_jarat_wrapper_a674a671669d4a136bbeb876a0dc8ceb9}{JaratWrapper}}(\mbox{\hyperlink{class_jarat}{Jarat}}*\ JaratPtr\ =\ \textcolor{keyword}{nullptr})\ :\ currJarat(JaratPtr)\{\};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_jarat_wrapper_a94e75edf900772c678b53ceb39785b94}{\string~JaratWrapper}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jarat_wrapper_a91a63b7d60dc0f368f3369d135e07869}{PrintJarat}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_jarat}{Jarat}}*\ \mbox{\hyperlink{class_jarat_wrapper_a340bb5b9452d17bc42ecd1837c88b19a}{getJarat}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_jarat_wrapper}{JaratWrapper}}*\ \mbox{\hyperlink{class_jarat_wrapper_aadb2fb7b7a81e58f1c84fdeba7d919bc}{getNextNode}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_jarat_wrapper}{JaratWrapper}}*\ \mbox{\hyperlink{class_jarat_wrapper_a699594775f1facce67004f16718bb6fd}{InitJaratWrapper}}(\mbox{\hyperlink{class_allomas}{Allomas}}*\ FirstAllomas,\ \mbox{\hyperlink{class_vonat}{Vonat}}**\ VonatArray);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jarat_wrapper_adc65c887abe60e42f0529d6d07d62424}{SaveJaratWrapper}}(\mbox{\hyperlink{class_jarat_wrapper}{JaratWrapper}}*\ FistJarat);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jarat_wrapper_a4a5e699f1f074489d3272b8f8bebd2ed}{operator+}}(\mbox{\hyperlink{class_jarat_wrapper}{JaratWrapper}}*\ newJaratWrapper);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_jarat}{Jarat}}*\ \mbox{\hyperlink{class_jarat_wrapper_af4768f58c7056a25d1f4ee397cb4eeba}{FindJaratByName}}(\textcolor{keyword}{const}\ std::string\ \&Nev);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jarat_wrapper_a69f5af0f653ef84fa60a068844154b21}{AddKeses}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//JARATWRAPPER\_H}}
+
+\end{DoxyCode}

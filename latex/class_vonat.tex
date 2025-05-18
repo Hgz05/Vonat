@@ -1,0 +1,200 @@
+\doxysection{Vonat Class Reference}
+\hypertarget{class_vonat}{}\label{class_vonat}\index{Vonat@{Vonat}}
+
+
+{\ttfamily \#include $<$Vonat.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vonat_a4a15057bc2724d0da49fcbecf1f713f9}{Vonat}} (\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}} Vonat\+Tipus=\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0a87ead174381cf60e1e0ceb361c429d14}{Szemelyi}}, int Vonat\+Szam=1, \mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*}Kocsi\+Array=nullptr, int Max\+Seb=80, int Kocsi\+Darab=10, int Kor=45)
+\item 
+\mbox{\hyperlink{class_vonat_a5c4dbbc3dbfe0d8d8b2dcedd72845b85}{Vonat}} (\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}Vonat\+Copy)
+\item 
+\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_a938f958c02f71069a6a2251f9a05f7e1}{copy\+Kocsi\+Array}} (\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*}Next\+Node)
+\item 
+\mbox{\hyperlink{class_vonat_a578ae976883512e3cf7ac3840e21a3c2}{\texorpdfstring{$\sim$}{\string~}\+Vonat}} ()
+\item 
+void \mbox{\hyperlink{class_vonat_a22c4e15a0f6ba26c88a36ae66d8fdb14}{Delete\+Kocsi\+Array}} (\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*}Array\+Element)
+\item 
+\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}} \mbox{\hyperlink{class_vonat_abe6614c1ee3b07b8dbbf8d44e95b1ede}{get\+Vonat\+Tipus}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_vonat_ac14f1f4c8e6b693e214acf268a7bcdcf}{enum\+To\+String}} (\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}} type) const
+\item 
+int \mbox{\hyperlink{class_vonat_a77ee5c1641bdba5f5afe8f64d350acb9}{get\+Vonat\+Szam}} () const
+\item 
+\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_af9811ee53e60359fb84bd3a37b1a773e}{get\+Kocsi}} ()
+\item 
+int \mbox{\hyperlink{class_vonat_a3be330d2cd4fd585f10c94381c46c99b}{get\+Max\+Seb}} () const
+\item 
+int \mbox{\hyperlink{class_vonat_ae176ee30c1d454c7ef3f99790ad9280f}{get\+Kocsi\+Darab}} () const
+\item 
+int \mbox{\hyperlink{class_vonat_aa45227d9b994df120192f3ee6286393b}{get\+Kor}} () const
+\item 
+void \mbox{\hyperlink{class_vonat_ac033451a6e35a68f84e35fc99d7adf77}{print\+Vonat\+Stat}} () const
+\item 
+\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_a3103d63ad5f3119f804c074f54b6f76c}{Find\+Kocsi\+By\+Szam}} (int Kocsi\+Szam)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}} \mbox{\hyperlink{class_vonat_ab340d7764951529611b9c965897d831b}{string\+To\+Vonat\+Tipus}} (std\+::string Vonat\+Tipus)
+\item 
+static int \mbox{\hyperlink{class_vonat_ad0b2d6736d7b8de1273b5f28c47ef3d5}{Check\+String\+Int}} (std\+::string VString)
+\item 
+static \mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_ab1572db3f05e2c0d9e5deab0c5e6d73b}{Create\+New\+Vonat}} (\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Vonat\+Array)
+\item 
+static \mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_a0f8a73b23aa9445b1f82787f1e4ac098}{Init\+Vonat}} ()
+\item 
+static void \mbox{\hyperlink{class_vonat_ae25f7f7b62bec05894ebcc850a6a4710}{Save\+Vonat}} (\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Vonat\+Array)
+\item 
+static \mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_a3f958b81908aa981139b86f72cd0b3c3}{Add\+To\+Vonat\+Array}} (\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Vonat\+Array, \mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}Vonat\+To\+Add)
+\item 
+static \mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_a2b8ea72099d3904f6ba4d09ce28e71ee}{Remove\+From\+Vonat\+Array}} (\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Vonat\+Array, \mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}Vonat\+To\+Remove)
+\item 
+static \mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vonat_adc96f05e7eccd2039798fe1ca2544f49}{Find\+Vonat\+By\+Number}} (\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Vonat\+Array, int Vonat\+Number)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vonat_a4a15057bc2724d0da49fcbecf1f713f9}\index{Vonat@{Vonat}!Vonat@{Vonat}}
+\index{Vonat@{Vonat}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{Vonat()}{Vonat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vonat_a4a15057bc2724d0da49fcbecf1f713f9} 
+Vonat\+::\+Vonat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}}}]{Vonat\+Tipus}{ = {\ttfamily \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0a87ead174381cf60e1e0ceb361c429d14}{Szemelyi}}}, }\item[{int}]{Vonat\+Szam}{ = {\ttfamily 1}, }\item[{\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*}}]{Kocsi\+Array}{ = {\ttfamily nullptr}, }\item[{int}]{Max\+Seb}{ = {\ttfamily 80}, }\item[{int}]{Kocsi\+Darab}{ = {\ttfamily 10}, }\item[{int}]{Kor}{ = {\ttfamily 45}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_vonat_a5c4dbbc3dbfe0d8d8b2dcedd72845b85}\index{Vonat@{Vonat}!Vonat@{Vonat}}
+\index{Vonat@{Vonat}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{Vonat()}{Vonat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vonat_a5c4dbbc3dbfe0d8d8b2dcedd72845b85} 
+Vonat\+::\+Vonat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}}]{Vonat\+Copy}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_vonat_a578ae976883512e3cf7ac3840e21a3c2}\index{Vonat@{Vonat}!````~Vonat@{\texorpdfstring{$\sim$}{\string~}Vonat}}
+\index{````~Vonat@{\texorpdfstring{$\sim$}{\string~}Vonat}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Vonat()}{\string~Vonat()}}
+{\footnotesize\ttfamily \label{class_vonat_a578ae976883512e3cf7ac3840e21a3c2} 
+Vonat\+::\texorpdfstring{$\sim$}{\string~}\+Vonat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vonat_a3f958b81908aa981139b86f72cd0b3c3}\index{Vonat@{Vonat}!AddToVonatArray@{AddToVonatArray}}
+\index{AddToVonatArray@{AddToVonatArray}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{AddToVonatArray()}{AddToVonatArray()}}
+{\footnotesize\ttfamily \label{class_vonat_a3f958b81908aa981139b86f72cd0b3c3} 
+\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Vonat\+::\+Add\+To\+Vonat\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{Vonat\+Array}{, }\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}}]{Vonat\+To\+Add}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_vonat_ad0b2d6736d7b8de1273b5f28c47ef3d5}\index{Vonat@{Vonat}!CheckStringInt@{CheckStringInt}}
+\index{CheckStringInt@{CheckStringInt}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{CheckStringInt()}{CheckStringInt()}}
+{\footnotesize\ttfamily \label{class_vonat_ad0b2d6736d7b8de1273b5f28c47ef3d5} 
+int Vonat\+::\+Check\+String\+Int (\begin{DoxyParamCaption}\item[{std\+::string}]{VString}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_vonat_a938f958c02f71069a6a2251f9a05f7e1}\index{Vonat@{Vonat}!copyKocsiArray@{copyKocsiArray}}
+\index{copyKocsiArray@{copyKocsiArray}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{copyKocsiArray()}{copyKocsiArray()}}
+{\footnotesize\ttfamily \label{class_vonat_a938f958c02f71069a6a2251f9a05f7e1} 
+\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*} Vonat\+::copy\+Kocsi\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*}}]{Next\+Node}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_vonat_ab1572db3f05e2c0d9e5deab0c5e6d73b}\index{Vonat@{Vonat}!CreateNewVonat@{CreateNewVonat}}
+\index{CreateNewVonat@{CreateNewVonat}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{CreateNewVonat()}{CreateNewVonat()}}
+{\footnotesize\ttfamily \label{class_vonat_ab1572db3f05e2c0d9e5deab0c5e6d73b} 
+\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Vonat\+::\+Create\+New\+Vonat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{Vonat\+Array}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_vonat_a22c4e15a0f6ba26c88a36ae66d8fdb14}\index{Vonat@{Vonat}!DeleteKocsiArray@{DeleteKocsiArray}}
+\index{DeleteKocsiArray@{DeleteKocsiArray}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{DeleteKocsiArray()}{DeleteKocsiArray()}}
+{\footnotesize\ttfamily \label{class_vonat_a22c4e15a0f6ba26c88a36ae66d8fdb14} 
+void Vonat\+::\+Delete\+Kocsi\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*}}]{Array\+Element}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_vonat_ac14f1f4c8e6b693e214acf268a7bcdcf}\index{Vonat@{Vonat}!enumToString@{enumToString}}
+\index{enumToString@{enumToString}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{enumToString()}{enumToString()}}
+{\footnotesize\ttfamily \label{class_vonat_ac14f1f4c8e6b693e214acf268a7bcdcf} 
+std\+::string Vonat\+::enum\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}}}]{type}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vonat_a3103d63ad5f3119f804c074f54b6f76c}\index{Vonat@{Vonat}!FindKocsiBySzam@{FindKocsiBySzam}}
+\index{FindKocsiBySzam@{FindKocsiBySzam}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{FindKocsiBySzam()}{FindKocsiBySzam()}}
+{\footnotesize\ttfamily \label{class_vonat_a3103d63ad5f3119f804c074f54b6f76c} 
+\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*} Vonat\+::\+Find\+Kocsi\+By\+Szam (\begin{DoxyParamCaption}\item[{int}]{Kocsi\+Szam}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_vonat_adc96f05e7eccd2039798fe1ca2544f49}\index{Vonat@{Vonat}!FindVonatByNumber@{FindVonatByNumber}}
+\index{FindVonatByNumber@{FindVonatByNumber}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{FindVonatByNumber()}{FindVonatByNumber()}}
+{\footnotesize\ttfamily \label{class_vonat_adc96f05e7eccd2039798fe1ca2544f49} 
+\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*} Vonat\+::\+Find\+Vonat\+By\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{Vonat\+Array}{, }\item[{int}]{Vonat\+Number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_vonat_af9811ee53e60359fb84bd3a37b1a773e}\index{Vonat@{Vonat}!getKocsi@{getKocsi}}
+\index{getKocsi@{getKocsi}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{getKocsi()}{getKocsi()}}
+{\footnotesize\ttfamily \label{class_vonat_af9811ee53e60359fb84bd3a37b1a773e} 
+\mbox{\hyperlink{class_kocsi}{Kocsi}} \texorpdfstring{$\ast$}{*} Vonat\+::get\+Kocsi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_vonat_ae176ee30c1d454c7ef3f99790ad9280f}\index{Vonat@{Vonat}!getKocsiDarab@{getKocsiDarab}}
+\index{getKocsiDarab@{getKocsiDarab}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{getKocsiDarab()}{getKocsiDarab()}}
+{\footnotesize\ttfamily \label{class_vonat_ae176ee30c1d454c7ef3f99790ad9280f} 
+int Vonat\+::get\+Kocsi\+Darab (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vonat_aa45227d9b994df120192f3ee6286393b}\index{Vonat@{Vonat}!getKor@{getKor}}
+\index{getKor@{getKor}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{getKor()}{getKor()}}
+{\footnotesize\ttfamily \label{class_vonat_aa45227d9b994df120192f3ee6286393b} 
+int Vonat\+::get\+Kor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vonat_a3be330d2cd4fd585f10c94381c46c99b}\index{Vonat@{Vonat}!getMaxSeb@{getMaxSeb}}
+\index{getMaxSeb@{getMaxSeb}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{getMaxSeb()}{getMaxSeb()}}
+{\footnotesize\ttfamily \label{class_vonat_a3be330d2cd4fd585f10c94381c46c99b} 
+int Vonat\+::get\+Max\+Seb (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vonat_a77ee5c1641bdba5f5afe8f64d350acb9}\index{Vonat@{Vonat}!getVonatSzam@{getVonatSzam}}
+\index{getVonatSzam@{getVonatSzam}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{getVonatSzam()}{getVonatSzam()}}
+{\footnotesize\ttfamily \label{class_vonat_a77ee5c1641bdba5f5afe8f64d350acb9} 
+int Vonat\+::get\+Vonat\+Szam (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vonat_abe6614c1ee3b07b8dbbf8d44e95b1ede}\index{Vonat@{Vonat}!getVonatTipus@{getVonatTipus}}
+\index{getVonatTipus@{getVonatTipus}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{getVonatTipus()}{getVonatTipus()}}
+{\footnotesize\ttfamily \label{class_vonat_abe6614c1ee3b07b8dbbf8d44e95b1ede} 
+\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}} Vonat\+::get\+Vonat\+Tipus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vonat_a0f8a73b23aa9445b1f82787f1e4ac098}\index{Vonat@{Vonat}!InitVonat@{InitVonat}}
+\index{InitVonat@{InitVonat}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{InitVonat()}{InitVonat()}}
+{\footnotesize\ttfamily \label{class_vonat_a0f8a73b23aa9445b1f82787f1e4ac098} 
+\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Vonat\+::\+Init\+Vonat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_vonat_ac033451a6e35a68f84e35fc99d7adf77}\index{Vonat@{Vonat}!printVonatStat@{printVonatStat}}
+\index{printVonatStat@{printVonatStat}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{printVonatStat()}{printVonatStat()}}
+{\footnotesize\ttfamily \label{class_vonat_ac033451a6e35a68f84e35fc99d7adf77} 
+void Vonat\+::print\+Vonat\+Stat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_vonat_a2b8ea72099d3904f6ba4d09ce28e71ee}\index{Vonat@{Vonat}!RemoveFromVonatArray@{RemoveFromVonatArray}}
+\index{RemoveFromVonatArray@{RemoveFromVonatArray}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{RemoveFromVonatArray()}{RemoveFromVonatArray()}}
+{\footnotesize\ttfamily \label{class_vonat_a2b8ea72099d3904f6ba4d09ce28e71ee} 
+\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Vonat\+::\+Remove\+From\+Vonat\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{Vonat\+Array}{, }\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}}]{Vonat\+To\+Remove}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_vonat_ae25f7f7b62bec05894ebcc850a6a4710}\index{Vonat@{Vonat}!SaveVonat@{SaveVonat}}
+\index{SaveVonat@{SaveVonat}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{SaveVonat()}{SaveVonat()}}
+{\footnotesize\ttfamily \label{class_vonat_ae25f7f7b62bec05894ebcc850a6a4710} 
+void Vonat\+::\+Save\+Vonat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vonat}{Vonat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{Vonat\+Array}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_vonat_ab340d7764951529611b9c965897d831b}\index{Vonat@{Vonat}!stringToVonatTipus@{stringToVonatTipus}}
+\index{stringToVonatTipus@{stringToVonatTipus}!Vonat@{Vonat}}
+\doxysubsubsection{\texorpdfstring{stringToVonatTipus()}{stringToVonatTipus()}}
+{\footnotesize\ttfamily \label{class_vonat_ab340d7764951529611b9c965897d831b} 
+\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{e\+Vonat\+Tipus}} Vonat\+::string\+To\+Vonat\+Tipus (\begin{DoxyParamCaption}\item[{std\+::string}]{Vonat\+Tipus}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_vonat_8h}{Vonat.\+h}}\item 
+\mbox{\hyperlink{_vonat_8cpp}{Vonat.\+cpp}}\end{DoxyCompactItemize}

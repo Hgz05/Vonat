@@ -24,6 +24,7 @@ public:
     eKocsiTipus getKocsiTipus();
     Ules* FindUlesBySzam(int UlesSzam);
     void PrintKocsik();
+    std::string KocsiToFile();
     std::string enumToString(eKocsiTipus KocsiTipus);
     static eKocsiTipus stringToKocsiTipus(const std::string KocsiTipus);
     Kocsi *getNextNode();

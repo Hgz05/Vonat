@@ -16,6 +16,15 @@ Jarat * Jegy::getJarat() {
     return JJarat;
 }
 
+std::string Jegy::FileToWrite() {
+    std::string JaratNev = JJarat->getJaratName();
+    std::string ElsoAll = ElsoAllomas->getAllomasNev();
+    std::string VegAll = VegAllomas->getAllomasNev();
+    std::string JegyAr = std::to_string(Jegyar);
+    std::string ToReturn =JaratNev+";"+ElsoAll+";"+VegAll+";"+JegyAr+";"+"0";
+    return ToReturn;
+}
+
 Allomas * Jegy::getElsoAllomas() {
     return ElsoAllomas;
 }

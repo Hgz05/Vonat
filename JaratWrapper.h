@@ -10,6 +10,7 @@ class JaratWrapper {
     public:
     JaratWrapper(Jarat* JaratPtr = nullptr) : currJarat(JaratPtr){};
     ~JaratWrapper();
+    void DelJaratWrapper();
     void PrintJarat();
     Jarat* getJarat();
     JaratWrapper* getNextNode();

@@ -1,0 +1,39 @@
+\doxysection{Kocsi.\+h}
+\hypertarget{_kocsi_8h_source}{}\label{_kocsi_8h_source}\mbox{\hyperlink{_kocsi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ KOCSI\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ KOCSI\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ules_8h}{Ules.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2a}{eKocsiTipus}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aa2165f94e699b95e4e1caf88b23e4b6a2}{Elso}},}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aa4542138416d1eef6ed89b1ffd545ba10}{Masod}},}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aab4250ade577b8b6a36ecfb182550aa6c}{Alvo}}}
+\DoxyCodeLine{00011\ \};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}\ *nextNode\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ KocsiSzam;}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2a}{eKocsiTipus}}\ KocsiTipus;}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_ules}{Ules}}\ **UlesArray;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ cKocsiSzam\ =\ -\/1,\ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2a}{eKocsiTipus}}\ cKocsiTipus\ =\ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aa2165f94e699b95e4e1caf88b23e4b6a2}{Elso}});\ \textcolor{comment}{//\ The\ Ules\ array\ will\ be\ generated\ by\ the\ constructor\ according\ to\ the\ type\ of\ the\ car\ and\ the\ number\ of\ a\ car.\ Each\ passanger\ car\ will\ have\ fix\ 60\ seats.\ So\ the\ array\ containing\ the\ Ules-\/classes\ will\ be\ 60\ long\ and\ the\ seat\ numbers\ will\ change\ according\ to\ the\ car\ number.\ E.g\ car\ 1:\ 1-\/60\ (seat\ num),\ car\ 2\ :\ 60-\/120\ (seat\ num).Sleaping\ cars\ will\ have\ 60\ beds.}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}(\mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}*\ KocsiCopy);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_kocsi_ac8856d23eab2ed3b7cf33f2d3d0471cc}{\string~Kocsi}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_kocsi_afb84879fa4ced7ab1187887335529ba4}{getKocsiSzam}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2a}{eKocsiTipus}}\ \mbox{\hyperlink{class_kocsi_a7f9e1f0f59eb4c67ad322f00cad2a692}{getKocsiTipus}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_ules}{Ules}}*\ \mbox{\hyperlink{class_kocsi_a67539b2530ed33e8c3a764060659109d}{FindUlesBySzam}}(\textcolor{keywordtype}{int}\ UlesSzam);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kocsi_a13a24cf947bbea0b49afa5359587e804}{PrintKocsik}}();}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{class_kocsi_a1f778372d2c0946bc32d3287685e74af}{enumToString}}(\mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2a}{eKocsiTipus}}\ KocsiTipus);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2a}{eKocsiTipus}}\ \mbox{\hyperlink{class_kocsi_af9457aed6704b46b384b2fd39684c301}{stringToKocsiTipus}}(\textcolor{keyword}{const}\ std::string\ KocsiTipus);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}\ *\mbox{\hyperlink{class_kocsi_ab3792f901db721b93df1d74770c2c6d4}{getNextNode}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kocsi_a9fe00b89589f86d05e7d74973d6beb9d}{setNextNode}}(\mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}\ *nextPtr);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kocsi_a905244b8909d61ef241d474d575e4dba}{operator+}}(\mbox{\hyperlink{class_kocsi_ae9faa35ed3cc1bf5df37fab850dfeb33}{Kocsi}}\ *newKocsi);}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

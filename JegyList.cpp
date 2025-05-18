@@ -5,7 +5,6 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <typeinfo>
 
 #include "HelyJegy.h"
 
@@ -29,6 +28,8 @@ JegyList::JegyList(HelyJegy *FirstHelyJegy) {
 }
 
 JegyList::~JegyList() {
+    delete[] JegyArray;
+    delete this;
 }
 
 void JegyList::setJegyListSize(int size) {
@@ -204,7 +205,7 @@ JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas
                         Jegy* FirstJegy = new Jegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName), Jegyar);
                         JegyArray = new JegyList(FirstJegy);
                         FirstJegyExists = true;
-                    } else if (FirstJegyExists == true){
+                    } else if (FirstJegyExists){
                         Jegy* JegyToAdd = new Jegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName), Jegyar);
                         JegyArray->AddToJEgyArray(JegyToAdd);
                     }
@@ -217,7 +218,7 @@ JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas
                     Jegy* FirstJegy = new HelyJegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName),Jegyar, UlesSzam);
                     JegyArray = new JegyList(FirstJegy);
                     FirstJegyExists = true;
-                } else if (FirstJegyExists == true){
+                } else if (FirstJegyExists){
                     Jegy* JegyToAdd = new HelyJegy(FirstJarat->FindJaratByName(JaratName),FirstAllomas->FindAllomasByName(ELsoAllomasName),FirstAllomas->FindAllomasByName(VegAllomasName), Jegyar, UlesSzam);
                     JegyArray->AddToJEgyArray(JegyToAdd);
                 }
@@ -231,4 +232,16 @@ JegyList* JegyList::InitJegyList(JaratWrapper* FirstJarat, Allomas* FirstAllomas
 }
 
 void JegyList::SaveJegyList(JegyList* JegyList) {
+    std::ofstream file("JegyList.dat");
+    if (!file.is_open()) {
+        throw "File could not be opened!";
+    }
+    for (int i = 0; i< JegyList->JegyArraySize; i++) {
+        if (JegyList->JegyArraySize-i == 1) {
+            file << JegyList->JegyArray[i]->FileToWrite();
+        }
+        file << JegyList->JegyArray[i]->FileToWrite()+"\n";
+    }
+    file.close();
 }
+

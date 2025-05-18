@@ -1,0 +1,28 @@
+\doxysection{Jarat.\+h}
+\hypertarget{_jarat_8h_source}{}\label{_jarat_8h_source}\mbox{\hyperlink{_jarat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JARAT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JARAT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vonat_8h}{Vonat.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_menetrend_8h}{Menetrend.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jarat_aa9299fec89059350b8baac996571e129}{Jarat}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ std::string\ JNev;}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_vonat}{Vonat}}\ *JVonat;}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_menetrend}{Menetrend}}\ *MenetRendArray;\ \textcolor{comment}{//\ Linked\ list}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_jarat_aa9299fec89059350b8baac996571e129}{Jarat}}(std::string\ Nev,\mbox{\hyperlink{class_vonat}{Vonat}}\ *JVonat\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{class_menetrend}{Menetrend}}\ *ElsoAllomas\ =\ \textcolor{keyword}{nullptr})\ :\ JNev(Nev),\ JVonat(JVonat),\ MenetRendArray(ElsoAllomas)\ \{\};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_jarat_a5389cb7f3b580318255d01289331120e}{\string~Jarat}}();}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \mbox{\hyperlink{class_jarat_a3cb2580dae49d1ada9d36c4d7a7a38da}{getJaratName}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jarat_a07e04d77e3230961b97ab0ae3f49c4aa}{PrintJarat}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jarat_aa4c3efaa74d57876407f8890c39d7808}{setJVonat}}(\mbox{\hyperlink{class_vonat}{Vonat}}\ *sVonat);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_vonat}{Vonat}}\ *\mbox{\hyperlink{class_jarat_a379792e2f1cde76e02e2b964be3127df}{getJVonat}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jarat_a351c49cef93efcf58275e3e5d0e82720}{setFirstMenetrend}}(\mbox{\hyperlink{class_menetrend}{Menetrend}}\ *sFirstMenetrend);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_menetrend}{Menetrend}}\ *\mbox{\hyperlink{class_jarat_af9e66c7bd9a32e2aeed0eeb689c0467a}{getFirstMenetrend}}();}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

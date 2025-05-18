@@ -1,0 +1,29 @@
+\doxysection{Jegy.\+h}
+\hypertarget{_jegy_8h_source}{}\label{_jegy_8h_source}\mbox{\hyperlink{_jegy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JEGY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JEGY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jarat_8h}{Jarat.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_allomas_8h}{Allomas.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jegy_abf0553a06dc4f437bed09ab18263e581}{Jegy}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_jarat}{Jarat}}\ *JJarat;}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}\ *ElsoAllomas;}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}\ *VegAllomas;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ Jegyar;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_jegy_abf0553a06dc4f437bed09ab18263e581}{Jegy}}(\mbox{\hyperlink{class_jarat}{Jarat}}\ *FelJarat\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{class_allomas}{Allomas}}\ *\mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aa2165f94e699b95e4e1caf88b23e4b6a2}{Elso}}\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{class_allomas}{Allomas}}\ *Utolso\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ Ar\ =\ -\/1)\ :\ JJarat(FelJarat),\ ElsoAllomas(\mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aa2165f94e699b95e4e1caf88b23e4b6a2}{Elso}}),\ VegAllomas(Utolso),\ Jegyar(Ar)\ \{\};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_jegy_abf0553a06dc4f437bed09ab18263e581}{Jegy}}(\mbox{\hyperlink{class_jegy}{Jegy}}*\ CopyJegy);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_jegy}{Jegy}}*\ \mbox{\hyperlink{class_jegy_a70ad304e1ed8e55fce22774b299a0f4e}{Clone}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_jegy_aab47eb67b4a914a2ec60662c51b953ab}{\string~Jegy}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_jarat}{Jarat}}*\ \mbox{\hyperlink{class_jegy_a8138695aebcd748edf4cb8faa163d970}{getJarat}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_jegy_a5183371a091519f403e91f9fc822fe07}{FileToWrite}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}*\ \mbox{\hyperlink{class_jegy_aa99d8f45a7635616eef33103e5402a8f}{getElsoAllomas}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}*\ \mbox{\hyperlink{class_jegy_acc733f148559201174c539e22f5d1fff}{getVegAllomas}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jegy_ae1e68ab8b1b75fb6922e429c7f603d4a}{getJegyAr}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jegy_a36b0a305ab1f8813d3145503f0787fd5}{PrintJegy}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JEGY\_H}}
+
+\end{DoxyCode}

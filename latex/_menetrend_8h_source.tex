@@ -1,0 +1,37 @@
+\doxysection{Menetrend.\+h}
+\hypertarget{_menetrend_8h_source}{}\label{_menetrend_8h_source}\mbox{\hyperlink{_menetrend_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENETREND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENETREND\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_allomas_8h}{Allomas.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ido_8h}{Ido.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menetrend_a635e14018a32ddac71fec443c4aef40b}{Menetrend}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_menetrend_a635e14018a32ddac71fec443c4aef40b}{Menetrend}}\ *nextNode\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}\ *CurrAllomas;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ MenetrendID;}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{struct_ido}{Ido}}\ *ErkezoIdo;}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{struct_ido}{Ido}}\ *InduloIdo;}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_ido}{Ido}}\ *EredErkezoIdo;}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{struct_ido}{Ido}}\ *EredInduloIdo;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_menetrend_a635e14018a32ddac71fec443c4aef40b}{Menetrend}}(\mbox{\hyperlink{class_allomas}{Allomas}}\ *MAllomas\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ ID\ =\ -\/1\ ,\mbox{\hyperlink{struct_ido}{Ido}}\ *ErkIdo\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{struct_ido}{Ido}}\ *IndIdo\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_ido}{Ido}}\ \mbox{\hyperlink{class_menetrend_a607add964cadf6f7aafdfb81d9ba885c}{getErkezoIdo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{struct_ido}{Ido}}\ \mbox{\hyperlink{class_menetrend_a52061eefd7278fabf2aa59eed91c485c}{getInduloIdo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}\ *\mbox{\hyperlink{class_menetrend_a77259f3ad1d167195adb691e9b8b3894}{getAllomas}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menetrend_a80bf30e859a4164568c37219c412f573}{printKeses}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menetrend_a9fc01850885b48aba3a18d0152dd7052}{setKeses}}(\textcolor{keywordtype}{int}\ Perc);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menetrend_a580612090c43afae00e3ad8a9e4e0cbf}{setKesesToALl}}(\textcolor{keywordtype}{int}\ Perc);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menetrend_ad23681ed9c2975a12068355e1960d466}{printInfo}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menetrend_a60a0c3d452ebb630599cc3a6bd16a288}{printAllInfo}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_menetrend_a635e14018a32ddac71fec443c4aef40b}{Menetrend}}\ *\mbox{\hyperlink{class_menetrend_aba1a48953813ab7615ca379d2a06f0a0}{getNextNode}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}*\ \mbox{\hyperlink{class_menetrend_a549600b25b125192b5b36a322dcb0ddd}{FindAllomasByName}}(std::string\ Name);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menetrend_aea09c057952558d2efc5ae57ee99d234}{operator+}}(\mbox{\hyperlink{class_menetrend_a635e14018a32ddac71fec443c4aef40b}{Menetrend}}\ *newMenetrend);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menetrend_aac85cb80e88b665f21c94b2106e1cced}{deleteElement}}(\mbox{\hyperlink{class_menetrend_a635e14018a32ddac71fec443c4aef40b}{Menetrend}}\ *curr);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_menetrend_aaf58583aeb42fd37ca9afa4168076091}{\string~Menetrend}}();}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,23 @@
+\doxysection{Hely\+Jegy.\+h}
+\hypertarget{_hely_jegy_8h_source}{}\label{_hely_jegy_8h_source}\mbox{\hyperlink{_hely_jegy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HELYJEGY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HELYJEGY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jegy_8h}{Jegy.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hely_jegy_a16ce65500402b101b4aef95108e1220e}{HelyJegy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_jegy_abf0553a06dc4f437bed09ab18263e581}{Jegy}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ UlesSzam;}
+\DoxyCodeLine{00007\ \ \ \ \ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_hely_jegy_a16ce65500402b101b4aef95108e1220e}{HelyJegy}}(\mbox{\hyperlink{class_jarat}{Jarat}}\ *FelJarat\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{class_allomas}{Allomas}}\ *\mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aa2165f94e699b95e4e1caf88b23e4b6a2}{Elso}}\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{class_allomas}{Allomas}}\ *Utolso\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ Ar\ =\ -\/1,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ules}{Ules}}\ =\ -\/1)\ :\ \mbox{\hyperlink{class_jegy_abf0553a06dc4f437bed09ab18263e581}{Jegy}}(FelJarat,\mbox{\hyperlink{_kocsi_8h_a0fa69266b31f6f3eddeb00dbd0d46e2aa2165f94e699b95e4e1caf88b23e4b6a2}{Elso}},Utolso,Ar),\ UlesSzam(\mbox{\hyperlink{class_ules}{Ules}})\{\};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_hely_jegy_ab121f43b2db626c89c9a2841ea3ea369}{HelyJegy}}(\mbox{\hyperlink{class_hely_jegy_a16ce65500402b101b4aef95108e1220e}{HelyJegy}}*\ CopyHelyJegy):\ \mbox{\hyperlink{class_jegy_abf0553a06dc4f437bed09ab18263e581}{Jegy}}(CopyHelyJegy),\ UlesSzam(CopyHelyJegy-\/>UlesSzam)\{\};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_jegy}{Jegy}}*\ \mbox{\hyperlink{class_hely_jegy_af21bb4aca94d8e4f0f3d97f21331e44a}{Clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \ \ std::string\ \mbox{\hyperlink{class_hely_jegy_a7215001e1074f1641b3ba246463eefd1}{FileToWrite}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_hely_jegy_a3605f99f7247b6b4af076244bd42e159}{getUlesSzam}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_hely_jegy_a1bcae6d69e9e05e5560e9f0557ee58f4}{\string~HelyJegy}}()\ =\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hely_jegy_aaebcfed5ed574bba4b1de76ad8b2500d}{PrintJegy}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HELYJEGY\_H}}
+
+\end{DoxyCode}

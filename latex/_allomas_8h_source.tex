@@ -1,0 +1,36 @@
+\doxysection{Allomas.\+h}
+\hypertarget{_allomas_8h_source}{}\label{_allomas_8h_source}\mbox{\hyperlink{_allomas_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ALLOMAS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ALLOMAS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_allomas_af978589350456429acf20d6abcc99927}{Allomas}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{class_allomas_af978589350456429acf20d6abcc99927}{Allomas}}\ *nextNode\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00007\ \ \ \ \ std::string\ Nev;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{double}\ Szelesseg;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{double}\ Magassag;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{bool}\ Wc;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ Bufe;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_allomas_af978589350456429acf20d6abcc99927}{Allomas}}(std::string\ Nev\ =\ \textcolor{stringliteral}{"{}Timbuktu"{}},\ \textcolor{keywordtype}{double}\ x\ =\ -\/1,\ \textcolor{keywordtype}{double}\ y\ =\ -\/1,\ \textcolor{keywordtype}{bool}\ wc\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ bufe\ =\ \textcolor{keyword}{false})\ :\ Nev(Nev),\ Szelesseg(x),\ Magassag(y),\ Wc(wc),\ Bufe(bufe)\ \{\};}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_allomas_a493b0731061ecec94cf5fa32bbabacf3}{\string~Allomas}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \mbox{\hyperlink{class_allomas_a83ce274049b916b501e4d468fc41a005}{getAllomasNev}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_allomas_a903650e5aa77c61f97ce6e09fdaf8414}{getX}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_allomas_aa34189b5947fa221111b323383dedbc2}{getY}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_allomas_a862d29b5d21d9ac7978c83fdeb9f5ef3}{getWc}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_allomas_af0de5ae376c06b5221f175d72fc271e2}{getBufe}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}\ *\mbox{\hyperlink{class_allomas_ae4f1133eb2021e07157eeeb73a5b65bb}{getNextNode}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_allomas_ae31f07f8b34ac58a4f1ce0580f7f6405}{setNextNode}}(\mbox{\hyperlink{class_allomas}{Allomas}}\ *nextNode);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_allomas_a77eb6ce23186d8021ffc05ed29715b47}{operator+}}(\mbox{\hyperlink{class_allomas}{Allomas}}\ *newAllomas);}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}*\ \mbox{\hyperlink{class_allomas_a53d2afd251a0aeec1f439d15cfc4809b}{AllomasDelete}}\ (\mbox{\hyperlink{class_allomas}{Allomas}}\ *AllomasToDelete,\ \mbox{\hyperlink{class_allomas}{Allomas}}*\ ElsoAllomas);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_allomas}{Allomas}}*\ \mbox{\hyperlink{class_allomas_af454ee0db37ae5c5304699713b66cdf0}{InitAllomas}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_allomas}{Allomas}}*\ \mbox{\hyperlink{class_allomas_a0eefa5865bab2e4e30b1f5f7a32c5a04}{FindAllomasByName}}(\textcolor{keyword}{const}\ std::string\&\ Nev);}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

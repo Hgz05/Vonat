@@ -1,0 +1,55 @@
+\doxysection{Vonat.\+h}
+\hypertarget{_vonat_8h_source}{}\label{_vonat_8h_source}\mbox{\hyperlink{_vonat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VONAT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VONAT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_kocsi_8h}{Kocsi.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{eVonatTipus}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0aed1e5f7c7fe726c35981e26b42fba10b}{InterCity}},}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0a8b237465f19816612eca121690378990}{Gyors}},}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0a1623f313bd93ad85fad5ee63cc6ea9cb}{Zonazo}},}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0a87ead174381cf60e1e0ceb361c429d14}{Szemelyi}}}
+\DoxyCodeLine{00011\ \};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vonat_a4a15057bc2724d0da49fcbecf1f713f9}{Vonat}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{eVonatTipus}}\ VonatTipus;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ VonatSzam;}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_kocsi}{Kocsi}}\ *KocsiArray;\ \textcolor{comment}{//\ Linked\ list}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ MaxSeb;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ Kor;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ KocsiDarab;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ VonatArraySize;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_vonat_a4a15057bc2724d0da49fcbecf1f713f9}{Vonat}}(\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{eVonatTipus}}\ VonatTipus\ =\ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0a87ead174381cf60e1e0ceb361c429d14}{Szemelyi}},\ \textcolor{keywordtype}{int}\ VonatSzam\ =\ 1,\ \mbox{\hyperlink{class_kocsi}{Kocsi}}\ *KocsiArray\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ MaxSeb\ =\ 80,\ \textcolor{keywordtype}{int}\ KocsiDarab\ =\ 10,\ \textcolor{keywordtype}{int}\ Kor\ =\ 45)\ :\ VonatTipus(VonatTipus),\ VonatSzam(VonatSzam),\ KocsiArray(KocsiArray),\ MaxSeb(MaxSeb),\ KocsiDarab(KocsiDarab),\ Kor(Kor)\ \{\};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_vonat_a4a15057bc2724d0da49fcbecf1f713f9}{Vonat}}(\mbox{\hyperlink{class_vonat}{Vonat}}*\ VonatCopy);}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_kocsi}{Kocsi}}*\ \mbox{\hyperlink{class_vonat_a938f958c02f71069a6a2251f9a05f7e1}{copyKocsiArray}}(\mbox{\hyperlink{class_kocsi}{Kocsi}}*\ NextNode);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_vonat_a578ae976883512e3cf7ac3840e21a3c2}{\string~Vonat}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vonat_a22c4e15a0f6ba26c88a36ae66d8fdb14}{DeleteKocsiArray}}(\mbox{\hyperlink{class_kocsi}{Kocsi}}*\ ArrayElement);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{eVonatTipus}}\ \mbox{\hyperlink{class_vonat_abe6614c1ee3b07b8dbbf8d44e95b1ede}{getVonatTipus}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{eVonatTipus}}\ \mbox{\hyperlink{class_vonat_ab340d7764951529611b9c965897d831b}{stringToVonatTipus}}(std::string\ VonatTipus);}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ \mbox{\hyperlink{class_vonat_ac14f1f4c8e6b693e214acf268a7bcdcf}{enumToString}}(\mbox{\hyperlink{_vonat_8h_a56f555c13683452be8717136926a65c0}{eVonatTipus}}\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vonat_a77ee5c1641bdba5f5afe8f64d350acb9}{getVonatSzam}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_kocsi}{Kocsi}}\ *\mbox{\hyperlink{class_vonat_af9811ee53e60359fb84bd3a37b1a773e}{getKocsi}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vonat_a3be330d2cd4fd585f10c94381c46c99b}{getMaxSeb}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vonat_ae176ee30c1d454c7ef3f99790ad9280f}{getKocsiDarab}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vonat_aa45227d9b994df120192f3ee6286393b}{getKor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vonat_ac033451a6e35a68f84e35fc99d7adf77}{printVonatStat}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vonat_ad0b2d6736d7b8de1273b5f28c47ef3d5}{CheckStringInt}}(std::string\ VString);}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_kocsi}{Kocsi}}*\ \mbox{\hyperlink{class_vonat_a3103d63ad5f3119f804c074f54b6f76c}{FindKocsiBySzam}}(\textcolor{keywordtype}{int}\ KocsiSzam);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vonat}{Vonat}}**\ \mbox{\hyperlink{class_vonat_ab1572db3f05e2c0d9e5deab0c5e6d73b}{CreateNewVonat}}(\mbox{\hyperlink{class_vonat}{Vonat}}**\ VonatArray);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vonat}{Vonat}}**\ \mbox{\hyperlink{class_vonat_a0f8a73b23aa9445b1f82787f1e4ac098}{InitVonat}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vonat_ae25f7f7b62bec05894ebcc850a6a4710}{SaveVonat}}(\mbox{\hyperlink{class_vonat}{Vonat}}**\ VonatArray);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vonat}{Vonat}}**\ \mbox{\hyperlink{class_vonat_a3f958b81908aa981139b86f72cd0b3c3}{AddToVonatArray}}(\mbox{\hyperlink{class_vonat}{Vonat}}**\ VonatArray,\ \mbox{\hyperlink{class_vonat}{Vonat}}*\ VonatToAdd);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vonat}{Vonat}}**\ \mbox{\hyperlink{class_vonat_a2b8ea72099d3904f6ba4d09ce28e71ee}{RemoveFromVonatArray}}(\mbox{\hyperlink{class_vonat}{Vonat}}**\ VonatArray,\ \mbox{\hyperlink{class_vonat}{Vonat}}*\ VonatToRemove);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vonat}{Vonat}}*\ \mbox{\hyperlink{class_vonat_adc96f05e7eccd2039798fe1ca2544f49}{FindVonatByNumber}}(\mbox{\hyperlink{class_vonat}{Vonat}}**\ VonatArray,\ \textcolor{keywordtype}{int}\ VonatNumber);}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

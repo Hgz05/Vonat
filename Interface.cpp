@@ -26,9 +26,13 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
         }
 
     }while(UserInput != 0 );
-    delete FirstJarat; //Fix
-    JegyList::SaveJegyList(JegyList);
     JaratWrapper::SaveJaratWrapper(FirstJarat);
+    FirstJarat->DelJaratWrapper();
+    try {
+        JegyList::SaveJegyList(JegyList);
+    }catch (const char* e) {
+        std::cout << e;
+    }
     Vonat::SaveVonat(VonatArray);
 
     return 0;

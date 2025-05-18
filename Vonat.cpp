@@ -286,6 +286,26 @@ void Vonat::SaveVonat(Vonat **VonatArray) {
     if (!file.is_open()) {
         throw "Vonat file could not be opened!";
     }
+    for (int i = 0; i<VonatArraySize; i++) {
+        if (VonatArraySize-i == 1) {
+            std::string VonatTipus = VonatArray[i]->enumToString(VonatArray[i]->getVonatTipus());
+            std::string VonatSzam = std::to_string(VonatArray[i]->getVonatSzam());
+            std::string MaxSeb = std::to_string(VonatArray[i]->getMaxSeb());
+            std::string Kor = std::to_string(VonatArray[i]->getKor());
+            std::string KocsiDarab = std::to_string(VonatArray[i]->getKocsiDarab());
+            file << VonatTipus <<";"<< VonatSzam<<";"<< MaxSeb<<";"<< Kor<<";"<< KocsiDarab<<";"<< VonatArray[i]->getKocsi()->KocsiToFile();
+        } else{
+            std::string VonatTipus = VonatArray[i]->enumToString(VonatArray[i]->getVonatTipus());
+            std::string VonatSzam = std::to_string(VonatArray[i]->getVonatSzam());
+            std::string MaxSeb = std::to_string(VonatArray[i]->getMaxSeb());
+            std::string Kor = std::to_string(VonatArray[i]->getKor());
+            std::string KocsiDarab = std::to_string(VonatArray[i]->getKocsiDarab());
+            file << VonatTipus <<";"<< VonatSzam<<";"<< MaxSeb<<";"<< Kor<<";"<< KocsiDarab<<";"<< VonatArray[i]->getKocsi()->KocsiToFile()+"\n";
+        }
+
+
+    }
+    delete[] VonatArray;
 
 
 }

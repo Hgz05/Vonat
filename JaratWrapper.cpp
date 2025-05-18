@@ -4,9 +4,11 @@
 #include <iostream>
 #include <sstream>
 
-JaratWrapper::~JaratWrapper() {
-    if (nextNode != nullptr) {
-        delete nextNode;
+JaratWrapper::~JaratWrapper() {}
+
+void JaratWrapper::DelJaratWrapper() {
+    if (this->nextNode != nullptr) {
+        this->nextNode->DelJaratWrapper();
     }
     delete this;
 }

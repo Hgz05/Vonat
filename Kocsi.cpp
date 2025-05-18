@@ -66,6 +66,20 @@ void Kocsi::PrintKocsik(){
 
 }
 
+std::string Kocsi::KocsiToFile() {
+    Kocsi* tmp = this;
+    std::string ToReturn = "";
+    while (tmp != nullptr) {
+        if (tmp->nextNode != nullptr) {
+            ToReturn = ToReturn+std::to_string(tmp->getKocsiSzam())+";"+tmp->enumToString(tmp->getKocsiTipus())+";";
+        } else {
+            ToReturn = ToReturn+std::to_string(tmp->getKocsiSzam())+";"+tmp->enumToString(tmp->getKocsiTipus());
+        }
+        tmp = tmp->nextNode;
+    }
+    return ToReturn;
+}
+
 std::string Kocsi::enumToString(eKocsiTipus KocsiTipus) {
     if (KocsiTipus == Elso) {
         return "Elso";

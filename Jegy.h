@@ -15,6 +15,7 @@ public:
     virtual Jegy* Clone();
     virtual ~Jegy() = default;
     Jarat* getJarat();
+    virtual std::string FileToWrite();
     Allomas* getElsoAllomas();
     Allomas* getVegAllomas();
     int getJegyAr() const;
