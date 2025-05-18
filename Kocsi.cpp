@@ -115,7 +115,7 @@ void Kocsi::setNextNode(Kocsi *nextPtr) {
 
 void Kocsi::operator+(Kocsi *newKocsi)
 {
-    if (this == nullptr || newKocsi == nullptr)
+    if (newKocsi == nullptr)
         throw "New or previous Kocsi does not exist.";
     Kocsi *tmp = this;
     while (tmp->getNextNode() != nullptr)

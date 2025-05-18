@@ -45,7 +45,7 @@ public:
     /**
      * Allomas destructor.
      */
-    ~Allomas();
+    ~Allomas() = default;
 
     /**
      * Name getter.

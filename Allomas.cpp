@@ -3,8 +3,7 @@
 #include <fstream>
 #include <sstream>
 
-Allomas::~Allomas() {}
-void Allomas::DelAllomas() {
+void Allomas::DelAllomas()  {
     if (this->nextNode != nullptr) {
         this->nextNode->DelAllomas();
     }
@@ -46,7 +45,7 @@ void Allomas::setNextNode(Allomas *nextNode) {
 
 void Allomas::operator+(Allomas *newAllomas)
 {
-    if (this == nullptr || newAllomas == nullptr)
+    if (newAllomas == nullptr)
         throw "Previous or new Allomas does not exist";
 
     Allomas *tmp = this;
@@ -117,7 +116,7 @@ Allomas* Allomas::InitAllomas() {
         if (!FirstAllomasExists) {
             FirstAllomas = new Allomas(Name,Szelesseg,Magassag,Wc,Bufe);
             FirstAllomasExists = true;
-        } else {
+        } else if (FirstAllomas != nullptr) {
             Allomas* NextAllomas = new Allomas(Name,Szelesseg,Magassag,Wc,Bufe);
             FirstAllomas->operator+(NextAllomas);
         }
