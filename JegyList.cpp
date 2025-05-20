@@ -28,8 +28,11 @@ JegyList::JegyList(HelyJegy *FirstHelyJegy) {
 }
 
 JegyList::~JegyList() {
+    //We need to destroy the jegy ptrs as well, because we will no longer use those jegy objects.
+    for (int i=0; i<JegyArraySize; i++) {
+        delete JegyArray[i];
+    }
     delete[] JegyArray;
-    delete this;
 }
 
 void JegyList::setJegyListSize(int size) {
@@ -243,5 +246,7 @@ void JegyList::SaveJegyList(JegyList* JegyList) {
 
     }
     file.close();
+    //call a mem delete on this array wrapper here
+    delete JegyList;
 }
 
