@@ -1,11 +1,12 @@
 #include "Jarat.h"
 #include <iostream>
 #include <bits/ostream.tcc>
+#include "memtrace.h"
 
 
 Jarat::~Jarat()
 {
-    delete MenetRendArray;
+    MenetRendArray->deleteElement(MenetRendArray);
 }
 
 std::string Jarat::getJaratName() {

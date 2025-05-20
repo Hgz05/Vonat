@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include "memtrace.h"
 
 
 JaratWrapper::~JaratWrapper() {}
@@ -11,6 +12,7 @@ void JaratWrapper::DelJaratWrapper() {
     if (this->nextNode != nullptr) {
         this->nextNode->DelJaratWrapper();
     }
+    delete this->currJarat;
     delete this;
 }
 

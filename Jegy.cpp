@@ -1,5 +1,6 @@
 #include "Jegy.h"
 #include <iostream>
+#include "memtrace.h"
 
 
 Jegy::Jegy(Jegy *CopyJegy) {

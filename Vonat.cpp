@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "memtrace.h"
 
 
 int Vonat::VonatArraySize = 0;
@@ -299,6 +300,9 @@ void Vonat::SaveVonat(Vonat **VonatArray) {
 
 
     }
+    for (int i = 0; i < VonatArraySize; i++) {
+        delete VonatArray[i];
+    }
     delete[] VonatArray;
     file.close();
 
@@ -311,7 +315,7 @@ Vonat ** Vonat::AddToVonatArray(Vonat **VonatArray, Vonat *VonatToAdd) {
     VonatArraySize++;
     Vonat** NewVonatArray = new Vonat *[VonatArraySize];
     for (int i = 0; i < VonatArraySize-1; i++) {
-        NewVonatArray[i] = new Vonat(VonatArray[i]);
+        NewVonatArray[i] = VonatArray[i];
     }
     delete[] VonatArray;
     NewVonatArray[VonatArraySize-1] = VonatToAdd;
@@ -324,18 +328,18 @@ Vonat ** Vonat::RemoveFromVonatArray(Vonat **VonatArray, Vonat *VonatToRemove) {
     }
     VonatArraySize--;
     if (VonatArraySize == 0) {
-        for (int i = 0; i < VonatArraySize+1; i++) {
-            delete VonatArray[i];
-        }
-        delete VonatArray;
+        delete VonatArray[0];
+        delete[] VonatArray;
         return nullptr;
     }
     int j = 0;
     Vonat** NewVonatArray = new Vonat *[VonatArraySize];
     for (int i = 0; i < VonatArraySize-1; i++) {
         if (VonatArray[i] != VonatToRemove) {
-            NewVonatArray[j] = new Vonat(VonatArray[i]);
+            NewVonatArray[j] = VonatArray[i];
             j++;
+        } else {
+            delete VonatArray[i];
         }
     }
     delete[] VonatArray;

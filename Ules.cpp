@@ -1,4 +1,5 @@
 #include "Ules.h"
+#include "memtrace.h"
 
 
 int Ules::getUlesSzam() const

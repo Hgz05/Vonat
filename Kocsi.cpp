@@ -1,6 +1,7 @@
 #include "Kocsi.h"
 #include <iostream>
 #include <string>
+#include "memtrace.h"
 
 
 Kocsi::Kocsi(const int KocsiSzam, eKocsiTipus KocsiTipus) : KocsiSzam(KocsiSzam), KocsiTipus(KocsiTipus)

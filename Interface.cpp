@@ -1,5 +1,6 @@
 #include "Interface.h"
 #include <iostream>
+#include "memtrace.h"
 
 int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWrapper *FirstJarat, JegyList *JegyList) {
     int UserInput;
@@ -34,7 +35,7 @@ int Interface::InterfaceInit(Allomas *FirstAllomas, Vonat **VonatArray, JaratWra
         std::cout << e;
     }
     Vonat::SaveVonat(VonatArray);
-
+    FirstAllomas->DelAllomas();
     return 0;
 }
 

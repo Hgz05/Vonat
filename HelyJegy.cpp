@@ -1,6 +1,7 @@
 #include "HelyJegy.h"
 #include <iostream>
 #include <string>
+#include "memtrace.h"
 
 
 Jegy * HelyJegy::Clone() {

@@ -1,5 +1,6 @@
 #include "Ido.h"
 #include <iostream>
+#include "memtrace.h"
 Ido Ido::operator-(Ido const &Alapido) const
 {
     Ido tmp;

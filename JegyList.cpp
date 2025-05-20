@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include "HelyJegy.h"
+#include "memtrace.h"
 
 
 JegyList::JegyList(Jegy *FirstJegy) {
@@ -45,7 +46,7 @@ void JegyList::AddToJEgyArray(Jegy *JegyToAdd) {
     }
     Jegy** NewJegyArray = new Jegy*[JegyArraySize+1];
     for (int i = 0; i < JegyArraySize; i++) {
-        NewJegyArray[i] = JegyArray[i]->Clone();
+        NewJegyArray[i] = JegyArray[i];
     }
     delete[] JegyArray;
     NewJegyArray[JegyArraySize] = JegyToAdd;

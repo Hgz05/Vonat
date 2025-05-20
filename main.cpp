@@ -4,7 +4,7 @@
 #include "Allomas.h"
 #include "JegyList.h"
 #include "Interface.h"
-
+#include "memtrace.h"
 
 
 

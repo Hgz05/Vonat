@@ -1,6 +1,6 @@
 #include "Menetrend.h"
 #include <iostream>
-
+#include "memtrace.h"
 
 Menetrend::Menetrend( Allomas *MAlomas, int ID, Ido *ErkIdo, Ido *IndIdo) {
     MenetrendID = ID;
@@ -111,5 +111,8 @@ void Menetrend::deleteElement(Menetrend *curr)
 }
 Menetrend::~Menetrend()
 {
-    deleteElement(this);
+    delete this->ErkezoIdo;
+    delete this->InduloIdo;
+    delete this->EredErkezoIdo;
+    delete this->EredInduloIdo;
 }

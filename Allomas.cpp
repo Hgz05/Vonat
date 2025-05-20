@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "memtrace.h"
 
 void Allomas::DelAllomas()  {
     if (this->nextNode != nullptr) {
@@ -9,6 +10,7 @@ void Allomas::DelAllomas()  {
     }
     delete this;
 }
+
 
 std::string Allomas::getAllomasNev() const
 {
