@@ -20,4 +20,4 @@ add_executable(NHFClion main.cpp
         memtrace.cpp
         memtrace.h
 )
-target_compile_definitions(NHFClion PRIVATE MEMCHECK)
+target_compile_definitions(NHFClion PRIVATE MEMTRACE)

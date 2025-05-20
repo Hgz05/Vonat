@@ -8,20 +8,20 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Allomas.cpp" "CMakeFiles/NHFClion.dir/Allomas.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Allomas.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/HelyJegy.cpp" "CMakeFiles/NHFClion.dir/HelyJegy.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/HelyJegy.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Ido.cpp" "CMakeFiles/NHFClion.dir/Ido.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Ido.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Interface.cpp" "CMakeFiles/NHFClion.dir/Interface.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Interface.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Jarat.cpp" "CMakeFiles/NHFClion.dir/Jarat.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Jarat.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/JaratWrapper.cpp" "CMakeFiles/NHFClion.dir/JaratWrapper.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/JaratWrapper.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Jegy.cpp" "CMakeFiles/NHFClion.dir/Jegy.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Jegy.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/JegyList.cpp" "CMakeFiles/NHFClion.dir/JegyList.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/JegyList.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Kocsi.cpp" "CMakeFiles/NHFClion.dir/Kocsi.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Kocsi.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Menetrend.cpp" "CMakeFiles/NHFClion.dir/Menetrend.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Menetrend.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Ules.cpp" "CMakeFiles/NHFClion.dir/Ules.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Ules.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/Vonat.cpp" "CMakeFiles/NHFClion.dir/Vonat.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/Vonat.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/main.cpp" "CMakeFiles/NHFClion.dir/main.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/main.cpp.obj.d"
-  "C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/memtrace.cpp" "CMakeFiles/NHFClion.dir/memtrace.cpp.obj" "gcc" "CMakeFiles/NHFClion.dir/memtrace.cpp.obj.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Allomas.cpp" "CMakeFiles/NHFClion.dir/Allomas.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Allomas.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/HelyJegy.cpp" "CMakeFiles/NHFClion.dir/HelyJegy.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/HelyJegy.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Ido.cpp" "CMakeFiles/NHFClion.dir/Ido.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Ido.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Interface.cpp" "CMakeFiles/NHFClion.dir/Interface.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Interface.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Jarat.cpp" "CMakeFiles/NHFClion.dir/Jarat.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Jarat.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/JaratWrapper.cpp" "CMakeFiles/NHFClion.dir/JaratWrapper.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/JaratWrapper.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Jegy.cpp" "CMakeFiles/NHFClion.dir/Jegy.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Jegy.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/JegyList.cpp" "CMakeFiles/NHFClion.dir/JegyList.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/JegyList.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Kocsi.cpp" "CMakeFiles/NHFClion.dir/Kocsi.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Kocsi.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Menetrend.cpp" "CMakeFiles/NHFClion.dir/Menetrend.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Menetrend.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Ules.cpp" "CMakeFiles/NHFClion.dir/Ules.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Ules.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/Vonat.cpp" "CMakeFiles/NHFClion.dir/Vonat.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/Vonat.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/main.cpp" "CMakeFiles/NHFClion.dir/main.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/main.cpp.o.d"
+  "/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/memtrace.cpp" "CMakeFiles/NHFClion.dir/memtrace.cpp.o" "gcc" "CMakeFiles/NHFClion.dir/memtrace.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,3 +1,3 @@
-C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/cmake-build-debug/CMakeFiles/NHFClion.dir
-C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/hejag/Documents/School Projects/NagyHfPot/Source/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/cmake-build-debug/CMakeFiles/NHFClion.dir
+/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bvarga/Documents/University/Heja_VonatFix/Vonat/cmake-build-debug/CMakeFiles/rebuild_cache.dir
